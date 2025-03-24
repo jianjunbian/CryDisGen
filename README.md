@@ -1,1 +1,2 @@
-# CryDisGen
+CryDisGen is a scientific software tailored for researchers and engineers working with crystal structures. Originally developed by Bian et. al. from Xi’an University of Architecture and Technology and Xi’an Jiaotong Univeristy, CryDisGen empowers users to create precise atomic models of general dislocation structures in crystals. With its robust modeling capabilities, this free tool supports academic, non-commercial, and commercial applications—making advanced crystallographic research more accessible and efficient. Now at version 1.0, CryDisGen is actively maintained with updates from its creators, ensuring reliable performance for its users.
+
