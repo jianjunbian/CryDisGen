@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Tools &mdash; CryDisGen beta documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8451b935" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f0d2c090"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. Examples" href="Example.html" />
+    <link rel="prev" title="6. Tags in Paramater file" href="Command.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CryDisGen
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">2. Download and Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">3. Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InOutFile.html">4. Input and output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParaFile.html">5. Parameter file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command.html">6. Tags in Paramater file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-bcc-region">7.1. Create BCC region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-fcc-region">7.2. Create FCC region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#helical-surface">7.3. Helical surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clip-a-crystal-region">7.4. Clip a crystal region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-file-for-loop-array">7.5. Parameter file for loop array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-file-for-nested-loops">7.6. Parameter file for nested loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-file-for-tetrahedron-array">7.7. Parameter file for tetrahedron array</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Example.html">8. Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">1. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">2. Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CryDisGen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>Tools</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tools">
+<h1><span class="section-number">7. </span>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h1>
+<p>These are the subdirectory in <code class="docutils literal notranslate"><span class="pre">./tools</span></code>, where sereral useful tools are released alongside <code class="docutils literal notranslate"><span class="pre">CryDisGen</span></code>.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bcc</p></td>
+<td><p>Create single crystal BCC sample as inpu of CryDisGen</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fcc</p></td>
+<td><p>Create single crystal FCC sample as inpu of CryDisGen</p></td>
+</tr>
+<tr class="row-even"><td><p>Helical_surface</p></td>
+<td><p>Generate a mesh of helical surface used for dislocaiton hexlix</p></td>
+</tr>
+<tr class="row-odd"><td><p>ModelClip</p></td>
+<td><p>Cut a cylinder out of a crystal block</p></td>
+</tr>
+<tr class="row-even"><td><p>para_file_loop_array</p></td>
+<td><p>Generate parameter file for dislocation loop array</p></td>
+</tr>
+<tr class="row-odd"><td><p>para_file_nested_loop</p></td>
+<td><p>Generate parameter file for an array of nested dislocation loops</p></td>
+</tr>
+<tr class="row-even"><td><p>para_file_tetrahedron_array</p></td>
+<td><p>Generate parameter file for an array of stacking fault tetrahedrons</p></td>
+</tr>
+</tbody>
+</table>
+<p>Several codes are published with CryDisGen to supply some extra functions</p>
+<hr class="docutils" />
+<section id="create-bcc-region">
+<h2><span class="section-number">7.1. </span>Create BCC region<a class="headerlink" href="#create-bcc-region" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">./tools/Bcc</span></code> directory provides a tool for generating body-centered cubic (BCC) crystal structures, which can be used as input for CryDisGen or LAMMPS. The BCC structure is defined by specifying the simulation region size, lattice orientations, and element type, as demonstrated in the screenshot below:</p>
+<a class="reference internal image-reference" href="_images/tool1.png"><img alt="_images/tool1.png" class="align-center" src="_images/tool1.png" style="width: 70%;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="create-fcc-region">
+<h2><span class="section-number">7.2. </span>Create FCC region<a class="headerlink" href="#create-fcc-region" title="Link to this heading"></a></h2>
+<p>Similary, the <code class="docutils literal notranslate"><span class="pre">./tools/Fcc</span></code> directory provides a tool for generating face-centered cubic (FCC) crystal structures, which can be used as input for CryDisGen or LAMMPS. The FCC structure is defined using the same parameters—simulation region size, lattice orientations, and element type—as demonstrated in the screenshot below:</p>
+<a class="reference internal image-reference" href="_images/tool2.png"><img alt="_images/tool2.png" class="align-center" src="_images/tool2.png" style="width: 70%;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="helical-surface">
+<h2><span class="section-number">7.3. </span>Helical surface<a class="headerlink" href="#helical-surface" title="Link to this heading"></a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./tools/Helical_surface</span></code> directory, a tool provided to generate a mesh of a helical surface, whic is necessary for creating a dislocation helix. The command-line input parameters include the global coordinate system of the atomic region, local coordinate system defining the helix’s orientation, as well as the rotation angle, pitch and radius of the helix, as shown in the screenshot below:</p>
+<a class="reference internal image-reference" href="_images/tool3.png"><img alt="_images/tool3.png" class="align-center" src="_images/tool3.png" style="width: 70%;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="clip-a-crystal-region">
+<h2><span class="section-number">7.4. </span>Clip a crystal region<a class="headerlink" href="#clip-a-crystal-region" title="Link to this heading"></a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./tools/ModelClip</span></code> directory, a tool provided to carve a cylinder out of a cubic crystal region. The input parameters include the file name of the crystal region, the axis orientation of the cylinder, and the position of cylinder axis in the other two dimensions.</p>
+<a class="reference internal image-reference" href="_images/tool4.png"><img alt="_images/tool4.png" class="align-center" src="_images/tool4.png" style="width: 70%;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="parameter-file-for-loop-array">
+<h2><span class="section-number">7.5. </span>Parameter file for loop array<a class="headerlink" href="#parameter-file-for-loop-array" title="Link to this heading"></a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./tools/para_file_loop_array</span></code> diectory, a shell scrip is provided to generate the <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">file</span></code> used by <code class="docutils literal notranslate"><span class="pre">CryDisGen</span></code>. This file enables the creating of an array of full dislocation loops in a BCC crysatl region as demonstrated in <cite>examples &lt;Examp_array_loop&gt;</cite>.</p>
+<a class="reference internal image-reference" href="_images/tool5.png"><img alt="_images/tool5.png" class="align-center" src="_images/tool5.png" style="width: 70%;" />
+</a>
+<hr class="docutils" />
+<p>To make the script executable, run the following command in a Terminal first:</p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>chmod +x gen_para_file.sh
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="parameter-file-for-nested-loops">
+<h2><span class="section-number">7.6. </span>Parameter file for nested loops<a class="headerlink" href="#parameter-file-for-nested-loops" title="Link to this heading"></a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./tools/para_file_nested_loop</span></code> diectory, a shell scrip is provided to generate the <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">file</span></code> used by <code class="docutils literal notranslate"><span class="pre">CryDisGen</span></code>. This file enables the creating of a group of nested full dislocation loops in a BCC crysatl region as demonstrated in <cite>examples &lt;Examp_loop_nested&gt;</cite>.</p>
+<a class="reference internal image-reference" href="_images/tool6.png"><img alt="_images/tool6.png" class="align-center" src="_images/tool6.png" style="width: 70%;" />
+</a>
+<hr class="docutils" />
+<p>To make the script executable, run the following command in a Terminal first:</p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>chmod +x gen_para_file.sh
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="parameter-file-for-tetrahedron-array">
+<h2><span class="section-number">7.7. </span>Parameter file for tetrahedron array<a class="headerlink" href="#parameter-file-for-tetrahedron-array" title="Link to this heading"></a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">./tools/para_file_tetrahedron_array</span></code> diectory, a shell scrip is provided to generate the <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">file</span></code> used by <code class="docutils literal notranslate"><span class="pre">CryDisGen</span></code>. This file enables the creating of an arra of stacking fault tetrahedrons in a FCC crysatl region, as demonstrated in <cite>examples &lt;Examp_array_sft&gt;</cite>.</p>
+<a class="reference internal image-reference" href="_images/tool7.png"><img alt="_images/tool7.png" class="align-center" src="_images/tool7.png" style="width: 70%;" />
+</a>
+<hr class="docutils" />
+<p>To make the script executable, run the following command in a Terminal first:</p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>chmod +x gen_para_file.sh
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Command.html" class="btn btn-neutral float-left" title="6. Tags in Paramater file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Example.html" class="btn btn-neutral float-right" title="8. Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jianjun Bian et al.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. Parameter file &mdash; CryDisGen beta documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8451b935" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f0d2c090"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Tags in Paramater file" href="Command.html" />
+    <link rel="prev" title="4. Input and output files" href="InOutFile.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CryDisGen
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">2. Download and Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">3. Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InOutFile.html">4. Input and output files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Parameter file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-format">5.1. General Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sections">5.2. Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-characteristics">5.3. Key Characteristics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#purpose-and-usage">5.4. Purpose and Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command.html">6. Tags in Paramater file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">7. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Example.html">8. Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">1. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">2. Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CryDisGen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>Parameter file</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parameter-file">
+<h1><span class="section-number">5. </span>Parameter file<a class="headerlink" href="#parameter-file" title="Link to this heading"></a></h1>
+<p>The paramater file is the central input of CryDisGen.</p>
+<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with keywords (often prefixed with a hyphen) followed by values, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">#those started with &#39;#&#39; are comment lines</span>
+<span class="linenos"> 2</span><span class="c">#crystal region</span>
+<span class="linenos"> 3</span><span class="k">Region</span>
+<span class="linenos"> 4</span><span class="n">-x</span>      1 -1  0      <span class="c"># lattice orientation in x-direction</span>
+<span class="linenos"> 5</span><span class="n">-y</span>      1  1  0      <span class="c"># lattice orientation in y-direction</span>
+<span class="linenos"> 6</span><span class="n">-z</span>      0  0  1      <span class="c"># lattice orientation in z-direction</span>
+<span class="linenos"> 7</span><span class="n">-lat</span>    3.615        <span class="c"># lattice constant</span>
+<span class="linenos"> 8</span><span class="n">-pbc</span>    1  1  1      <span class="c"># boundary condition flag: &#39;1&#39;: pbc, &#39;0&#39;: non-pbc</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c">#stacking fault tetrahedron</span>
+<span class="linenos">11</span><span class="k">nTetrahedron</span>  1      <span class="c"># number of stacking fault tetrahedron</span>
+<span class="linenos">12</span><span class="k">Tetrahedron</span>          <span class="c"># label of tetrahedron</span>
+<span class="linenos">13</span><span class="n">-tc</span>     0. 0. 0.     <span class="c"># center of the bottom face of tetrahedron</span>
+<span class="linenos">14</span><span class="n">-tr</span>     40           <span class="c"># radius of the circumscribe circle of the bottom face</span>
+<span class="linenos">15</span><span class="n">-tnorm</span> -1 -1 -1      <span class="c"># outward nomral direction bottom face of tetrahedron</span>
+<span class="linenos">16</span><span class="n">-lxt</span>    1 -1  0      <span class="c"># local x axis on the bottom face</span>
+<span class="linenos">17</span><span class="n">-lyt</span>   -1 -1  2      <span class="c"># local y axis on the bottom face</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c">#dislcoation</span>
+<span class="linenos">20</span><span class="k">nLoop</span>   1            <span class="c"># number of dislocation loops</span>
+<span class="linenos">21</span><span class="k">Loop</span>                 <span class="c"># label of a dislocation section</span>
+<span class="linenos">22</span><span class="n">-bv</span>     1  1  1      <span class="c"># orientation of Burger&#39;s vector</span>
+<span class="linenos">23</span><span class="n">-bs</span>     1/3          <span class="c"># scalar coefficient of Burger&#39;s vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
+<span class="linenos">24</span><span class="n">-dnorm</span>  1  1  1      <span class="c"># normal direction of plane with dislocation loop</span>
+<span class="linenos">25</span><span class="n">-dc</span>     0. 0  0      <span class="c"># center of dislocation loop</span>
+<span class="linenos">26</span><span class="n">-dr</span>     25           <span class="c"># radius of dislocaiton loopS</span>
+<span class="linenos">27</span><span class="n">-lx</span>     1 -1  0      <span class="c"># local x axis on slip plane</span>
+<span class="linenos">28</span><span class="n">-ly</span>     1  1 -2      <span class="c"># local y axis on slip plane</span>
+<span class="linenos">29</span><span class="n">-ndisl</span>  4            <span class="c"># segments of a discretized dislocation loop</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c">#dislocation helix</span>
+<span class="linenos">32</span><span class="k">nHelix</span> 1             <span class="c"># number of dislocation helix</span>
+<span class="linenos">33</span><span class="k">Helix</span>                <span class="c"># lable of a dislocation helix</span>
+<span class="linenos">34</span><span class="n">-bvh</span>   1  1  1       <span class="c"># Burgers vecotr of the helix</span>
+<span class="linenos">35</span><span class="n">-bsh</span>   1/2           <span class="c"># scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
+<span class="linenos">36</span><span class="n">-f</span>     mesh.dat      <span class="c"># mesh of the helical surface</span>
+</pre></div>
+</div>
+<section id="general-format">
+<h2><span class="section-number">5.1. </span>General Format<a class="headerlink" href="#general-format" title="Link to this heading"></a></h2>
+<p><strong>Comments</strong>: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).</p>
+<p><strong>Keywords</strong>: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.</p>
+<p><strong>Whitespace</strong>: Keywords and values are separated by spaces or tabs, with consistent spacing for readability.</p>
+<p><strong>Section Labels</strong>: Some keywords (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.</p>
+</section>
+<section id="sections">
+<h2><span class="section-number">5.2. </span>Sections<a class="headerlink" href="#sections" title="Link to this heading"></a></h2>
+<p><strong>Crystal Region</strong></p>
+<ul class="simple">
+<li><p><em>Purpose</em>: Defines the lattice properties and boundary conditions of the crystal.</p></li>
+<li><p><em>Keyword</em>:</p>
+<ul>
+<li><p><em>Region</em> (marks the start of this section).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Stacking Fault Tetrahedron</strong></p>
+<ul class="simple">
+<li><p><em>Purpose</em>: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.</p></li>
+<li><p><em>Keywords</em>:</p>
+<ul>
+<li><p><em>nTetrahedron</em>: Specifies the number of tetrahedrons to generate (e.g., 1).</p></li>
+<li><p><em>Tetrahedron</em>: Labels the start of a tetrahedron definition</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Dislocation Loop</strong></p>
+<ul class="simple">
+<li><p><em>Purpose</em>: Defines dislocation loops, another type of crystal defect.</p></li>
+<li><p><em>Keywords</em>:</p>
+<ul>
+<li><p><em>nLoop</em>: Specifies the number of dislocation loops (e.g., 1).</p></li>
+<li><p><em>Loop</em>: Labels the start of a dislocation loop definition.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Dislocation Helix</strong></p>
+<ul class="simple">
+<li><p><em>Purpose</em>: Defines dislocation helix, a type of dislocation</p></li>
+<li><p><em>Keywords</em>:</p>
+<ul>
+<li><p><em>nHelix</em>: Specifies the number of dislocation helix (e.g., 1).</p></li>
+<li><p><em>Helix</em>:  Labels the start of a dislocation helix definition.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="key-characteristics">
+<h2><span class="section-number">5.3. </span>Key Characteristics<a class="headerlink" href="#key-characteristics" title="Link to this heading"></a></h2>
+<p><strong>Hierarchical Structure</strong>: The file is organized into sections (Region, Tetrahedron, Loop), each with specific parameters, allowing modular defect definitions.</p>
+<p><strong>Vector-Based Inputs</strong>: Many parameters use three-component vectors (e.g., -x, -bv, -dnorm) to define orientations and positions in 3D space.</p>
+<p><strong>Flexibility</strong>: Supports multiple defects (e.g., nTetrahedron, nLoop) with customizable attributes, making it adaptable to various simulation needs.</p>
+<p><strong>Units</strong>: Assumed to align with MD conventions (e.g., angstroms for lengths), though not explicitly stated in the file.</p>
+<p><strong>Readability</strong>: Comments and consistent formatting enhance user understanding and editing.</p>
+</section>
+<section id="purpose-and-usage">
+<h2><span class="section-number">5.4. </span>Purpose and Usage<a class="headerlink" href="#purpose-and-usage" title="Link to this heading"></a></h2>
+<p>This file serves as the parameter_file input for CryDisGen (as described in your earlier usage section), complementing the crystal_file by defining defects to insert into the crystal structure. It enables users to specify complex dislocation and tetrahedron configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="InOutFile.html" class="btn btn-neutral float-left" title="4. Input and output files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Command.html" class="btn btn-neutral float-right" title="6. Tags in Paramater file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jianjun Bian et al.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

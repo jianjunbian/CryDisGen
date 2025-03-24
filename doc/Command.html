@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Tags in Paramater file &mdash; CryDisGen beta documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8451b935" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f0d2c090"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. Tools" href="Tools.html" />
+    <link rel="prev" title="5. Parameter file" href="ParaFile.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CryDisGen
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">2. Download and Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">3. Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InOutFile.html">4. Input and output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParaFile.html">5. Parameter file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Tags in Paramater file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indication-tags">6.1. Indication tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#counter-tags">6.2. Counter tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-tags">6.3. Parameter tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">7. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Example.html">8. Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">1. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">2. Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CryDisGen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>Tags in Paramater file</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tags-in-paramater-file">
+<h1><span class="section-number">6. </span>Tags in Paramater file<a class="headerlink" href="#tags-in-paramater-file" title="Link to this heading"></a></h1>
+<p>The parameter file uses <strong>tags</strong> to configure CryDisGen: <strong>indication tags</strong> (<em>Region, Loop, Tetrahedron, Helix</em>) specify the atom region or dislocation type, <strong>counter tags</strong> (<em>nTetrahedron, nLoop, nHelix</em>) define the number of dislocation objects, and <strong>parameter tags</strong> (e.g., <em>-x, -bv</em>) set detailed properties.</p>
+<section id="indication-tags">
+<h2><span class="section-number">6.1. </span>Indication tags<a class="headerlink" href="#indication-tags" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Indication tags in CryDisGen’s parameter file supply the information of the input atomic region or define dislocation object being configured. There are <strong>Four</strong> indication tages in current version: <strong>Region</strong>, <strong>Loop</strong>, <strong>Tetrahedron</strong> and <strong>Helix</strong>. These tags specify either the input atom region (e.g., the crystal lattice) or the type of dislocation object to be introduced (e.g., a loop or tetrahedron), providing the structural context for subsequent counter and parameter tags. Each tag initiates a block of settings that CryDisGen uses to construct the corresponding atomic-scale feature.</p>
+</div>
+<p><strong>Region:</strong></p>
+<p>It indicates the following block of parameter tags defines the input atomic region. This section supplies the additional parameters for the atomic configuration. In the parameter file, only one <strong>Region</strong> tag and its associated block is required. If multiple tags and blocks are included, the last one overrides any previous ones, ensuring a single, final definition of the crystal region.</p>
+<p><strong>Loop:</strong></p>
+<p>It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In parameter file, each dislocation loop is corresponding to an independent <strong>Loop</strong> with its following block. Multiple dislocation loops can be contained in one parameter file, and there is no limitation to the number of dislocation loops.</p>
+<p><strong>Tetrahedron:</strong></p>
+<p>Similarly, it indicates the following command block defines a stacking fault tetrahedron. In parameter file, <strong>Tetrahedron</strong> can be written as <strong>Tetra</strong> for short. Each stacking fault tetrahedron is corresponding to an independent <strong>Tetrahedron</strong> tag with a following command block. Multiple tetraherons can be included in parameter file, and there is no limitation to the number.</p>
+<p><strong>Helix:</strong></p>
+<p>Similar to the previous two tags, it indicats the following command block defines a dislocation helix. All other properties are the same as prevous tags. <strong>Helix</strong> and its following command block define an independent dislocation helix. Multiple helices can be included in one file, and there is no limitation to the nubmer.</p>
+</section>
+<section id="counter-tags">
+<h2><span class="section-number">6.2. </span>Counter tags<a class="headerlink" href="#counter-tags" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Counter tags in CryDisGen’s parameter file specify the number of dislocation objects to be generated. It declares how many instances of a given dislocation type will follow. There are <strong>Three</strong> counter tags: <strong>nLoop</strong>, <strong>Tetrahedron</strong> and <strong>nHelix</strong>, which defines the number of dislocation loops, the number of stacking fault tetrahedrons and the number of dislocation helix in a crystal region. These tags needs to be written in the parameter only if the number of the dislocation instance is non-zero.  They can be put anywhere in the parameter file. The number of section with indication tags must match the value of N corresponding to each counter tag, or CryDisGen may encounter errors or misprocess the input.</p>
+</div>
+<p><strong>nLoop N:</strong></p>
+<p>This counter tag <em>nLoop N</em> specifies the number of dislocation loop sections to be defined in CryDisGen’s parameter file. Here, N is a positive integer (e.g., 1, 2, etc.) indicating how many Loop sections follow in the file.</p>
+<p><strong>nTetrhedron N / nTetra N:</strong></p>
+<p>This counter <em>nTetrahedron</em> tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as <em>nTetra N</em> for short.</p>
+<p><strong>nHelix N:</strong></p>
+<p>The counter tag <em>nHelix N</em> specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow.</p>
+</section>
+<section id="parameter-tags">
+<h2><span class="section-number">6.3. </span>Parameter tags<a class="headerlink" href="#parameter-tags" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parameter tags in CryDisGen’s parameter file define the detailed configuration settings for the crystal region or dislocation objects specified by indication tags (<em>Region, Loop, Tetrahedron, Helix</em>). Prefixed with a hyphen (e.g., -x, -bv, -tc), these tags follow their associated indication tag and provide specific values—such as coordinates, vectors, or scalars—that CryDisGen uses to construct the atomic-scale structure. Each parameter tag is tailored to its section’s context, ensuring precise customization of the simulation model.</p>
+</div>
+<p><strong>Region:</strong></p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">#those started with &#39;#&#39; are comment lines</span>
+<span class="linenos">2</span><span class="c">#crystal region</span>
+<span class="linenos">3</span><span class="k">Region</span>
+<span class="linenos">4</span><span class="n">-x</span>     1 -1  0        <span class="c"># lattice orientation in x-direction</span>
+<span class="linenos">5</span><span class="n">-y</span>     1  1 -2        <span class="c"># lattice orientation in y-direction</span>
+<span class="linenos">6</span><span class="n">-z</span>     1  1  1        <span class="c"># lattice orientation in z-direction</span>
+<span class="linenos">7</span><span class="n">-lat</span>   3.615          <span class="c"># lattice constant</span>
+<span class="linenos">8</span><span class="n">-pbc</span>   1  1  1        <span class="c"># boundary condition flag: &#39;1&#39;: pbc, &#39;0&#39;: non-pbc</span>
+</pre></div>
+</div>
+<p><strong>Loop:</strong></p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">#dislcoation</span>
+<span class="linenos"> 2</span><span class="k">nLoop</span>   1             <span class="c"># number of dislocaito loops</span>
+<span class="linenos"> 3</span><span class="k">Loop</span>                  <span class="c"># label of a dislocation section</span>
+<span class="linenos"> 4</span><span class="n">-bv</span>     1  1  1       <span class="c"># orientation of Burgers vector</span>
+<span class="linenos"> 5</span><span class="n">-bs</span>     1/3           <span class="c"># scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
+<span class="linenos"> 6</span><span class="n">-dnorm</span>  1  1  1       <span class="c"># normal direction of plane with dislocation loop</span>
+<span class="linenos"> 7</span><span class="n">-dc</span>     0.2 0  0      <span class="c"># center of dislocation loop</span>
+<span class="linenos"> 8</span><span class="n">-dr</span>     25            <span class="c"># radius of dislocaiton loopS</span>
+<span class="linenos"> 9</span><span class="n">-lx</span>     1 -1  0       <span class="c"># local x axis on slip plane</span>
+<span class="linenos">10</span><span class="n">-ly</span>     1  1 -2       <span class="c"># local y axis on slip plane</span>
+<span class="linenos">11</span><span class="n">-ndisl</span>  4             <span class="c"># segments of a discretized dislocation loop</span>
+</pre></div>
+</div>
+<p><strong>Tetrahedron:</strong></p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">#stacking fault tetrahedrion</span>
+<span class="linenos">2</span><span class="k">nTetrahedron</span> 1        <span class="c"># number of stacking fault tetrahedron</span>
+<span class="linenos">3</span><span class="k">Tetrahedron</span>           <span class="c"># label of tetrahedron</span>
+<span class="linenos">4</span><span class="n">-tc</span>      0. 0. 0.     <span class="c"># center of the bottom face of tetrahedron</span>
+<span class="linenos">5</span><span class="n">-tr</span>      40           <span class="c"># radius of the circumscribe circle of the bottom face</span>
+<span class="linenos">6</span><span class="n">-tnorm</span>  -1 -1 -1      <span class="c"># outward nomral direction bottom face of tetrahedron</span>
+<span class="linenos">7</span><span class="n">-lxt</span>     1 -1  0      <span class="c"># local x axis on the bottom face</span>
+<span class="linenos">8</span><span class="n">-lyt</span>    -1 -1  2      <span class="c"># local y axis on the bottom face</span>
+</pre></div>
+</div>
+<p><strong>Helix:</strong></p>
+<div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c">#dislocation helix</span>
+<span class="linenos">2</span><span class="k">nHelix</span>  2             <span class="c"># number dislocation helix</span>
+<span class="linenos">3</span><span class="k">Helix</span>                 <span class="c"># lable of dislocation helix</span>
+<span class="linenos">4</span><span class="n">-bvh</span>    1  1  1       <span class="c"># orientation of Burgers vector of helix</span>
+<span class="linenos">5</span><span class="n">-bsh</span>    1/2           <span class="c"># scalar coefficient of Burgers vector helix</span>
+<span class="linenos">6</span><span class="n">-f</span>      mesh0.dat     <span class="c"># mesh of helical surface</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ParaFile.html" class="btn btn-neutral float-left" title="5. Parameter file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Tools.html" class="btn btn-neutral float-right" title="7. Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jianjun Bian et al.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
