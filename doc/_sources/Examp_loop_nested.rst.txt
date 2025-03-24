@@ -1,0 +1,94 @@
+Nested full dislocation loop
+============================
+
+
+.. |nested|  image:: img/nested.png
+   :width: 40%
+   :align: bottom 
+
+|nested|
+
+--------
+
+To create an array of nested full dislocation loops in a BCC single crystal sample, 
+
+**Step 1:**
+
+  Use :doc:`Tools/Bcc <Tools>` to creat an BCC crystal sample: ``bcc_reg.lmp``, use :doc:`Tools/para_file_nested_loop <Tools>` to create the Parameter file: ``para_file``;
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file bcc_reg.lmp
+
+--------
+
+.. admonition::  Parameter file 
+
+   Content of the :doc:`para_file <ParaFile>`:
+
+.. code-block:: CryDisGen
+   :linenos:
+
+    Region
+    -x 1 0 0
+    -y 0 1 0
+    -z 0 0 1
+    -lat 3.303
+    -pbc 1 1 1
+     
+    nLoop 5
+    Loop           
+    -bv      1  1  1
+    -bs     1/2           
+    -dnorm   1 -1  0 
+    -dc     0 0 -60   
+    -dr     25            
+    -lx      1  1  0     
+    -ly      0  0  1     
+    -ndisl  8             
+     
+    Loop           
+    -bv      1  1  1
+    -bs     1/2           
+    -dnorm   1  1  0 
+    -dc     0 0 -30   
+    -dr     25            
+    -lx     -1  1  0     
+    -ly      0  0  1     
+    -ndisl  8             
+     
+    Loop           
+    -bv      1  1  1
+    -bs     1/2           
+    -dnorm   1 -1  0 
+    -dc     0 0 0   
+    -dr     25            
+    -lx      1  1  0     
+    -ly      0  0  1     
+    -ndisl  8             
+     
+    Loop           
+    -bv      1  1  1
+    -bs     1/2           
+    -dnorm   1  1  0 
+    -dc     0 0 30   
+    -dr     25            
+    -lx     -1  1  0     
+    -ly      0  0  1     
+    -ndisl  8             
+     
+    Loop           
+    -bv      1  1  1
+    -bs     1/2           
+    -dnorm   1 -1  0 
+    -dc     0 0 60   
+    -dr     25            
+    -lx      1  1  0     
+    -ly      0  0  1     
+    -ndisl  8             
+     

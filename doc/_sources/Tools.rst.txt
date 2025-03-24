@@ -1,0 +1,130 @@
+Tools
+=====
+
+These are the subdirectory in ``./tools``, where sereral useful tools are released alongside ``CryDisGen``.
+
++-----------------------------+----------------------------------------------------------------------+
+| Items                       | Description                                                          |
++=============================+======================================================================+
+| Bcc                         | Create single crystal BCC sample as inpu of CryDisGen                |
++-----------------------------+----------------------------------------------------------------------+
+| Fcc                         | Create single crystal FCC sample as inpu of CryDisGen                |
++-----------------------------+----------------------------------------------------------------------+
+| Helical_surface             | Generate a mesh of helical surface used for dislocaiton hexlix       |
++-----------------------------+----------------------------------------------------------------------+
+| ModelClip                   | Cut a cylinder out of a crystal block                                |
++-----------------------------+----------------------------------------------------------------------+
+| para_file_loop_array        | Generate parameter file for dislocation loop array                   |
++-----------------------------+----------------------------------------------------------------------+
+| para_file_nested_loop       | Generate parameter file for an array of nested dislocation loops     |
++-----------------------------+----------------------------------------------------------------------+
+| para_file_tetrahedron_array | Generate parameter file for an array of stacking fault tetrahedrons  |
++-----------------------------+----------------------------------------------------------------------+
+
+
+Several codes are published with CryDisGen to supply some extra functions
+
+--------
+
+Create BCC region
+-----------------
+
+The ``./tools/Bcc`` directory provides a tool for generating body-centered cubic (BCC) crystal structures, which can be used as input for CryDisGen or LAMMPS. The BCC structure is defined by specifying the simulation region size, lattice orientations, and element type, as demonstrated in the screenshot below:
+
+.. image:: img/tool1.png
+   :width: 70% 
+   :align: center
+
+--------------
+
+Create FCC region
+-----------------
+
+Similary, the ``./tools/Fcc`` directory provides a tool for generating face-centered cubic (FCC) crystal structures, which can be used as input for CryDisGen or LAMMPS. The FCC structure is defined using the same parameters—simulation region size, lattice orientations, and element type—as demonstrated in the screenshot below:
+
+.. image:: img/tool2.png
+   :width: 70%
+   :align: center
+
+--------------
+
+Helical surface
+---------------
+
+In the ``./tools/Helical_surface`` directory, a tool provided to generate a mesh of a helical surface, whic is necessary for creating a dislocation helix. The command-line input parameters include the global coordinate system of the atomic region, local coordinate system defining the helix's orientation, as well as the rotation angle, pitch and radius of the helix, as shown in the screenshot below: 
+
+.. image:: img/tool3.png
+   :width: 70%
+   :align: center
+
+--------------
+
+Clip a crystal region
+---------------------
+
+In the ``./tools/ModelClip`` directory, a tool provided to carve a cylinder out of a cubic crystal region. The input parameters include the file name of the crystal region, the axis orientation of the cylinder, and the position of cylinder axis in the other two dimensions. 
+
+.. image:: img/tool4.png
+   :width: 70%
+   :align: center
+
+--------------
+
+Parameter file for loop array 
+-----------------------------
+
+In the ``./tools/para_file_loop_array`` diectory, a shell scrip is provided to generate the ``Parameter file`` used by ``CryDisGen``. This file enables the creating of an array of full dislocation loops in a BCC crysatl region as demonstrated in `examples <Examp_array_loop>`.
+
+.. image:: img/tool5.png
+   :width: 70%
+   :align: center
+
+--------------
+
+To make the script executable, run the following command in a Terminal first:  
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   chmod +x gen_para_file.sh
+
+--------------
+
+Parameter file for nested loops 
+-------------------------------
+
+In the ``./tools/para_file_nested_loop`` diectory, a shell scrip is provided to generate the ``Parameter file`` used by ``CryDisGen``. This file enables the creating of a group of nested full dislocation loops in a BCC crysatl region as demonstrated in `examples <Examp_loop_nested>`.
+
+.. image:: img/tool6.png
+   :width: 70%
+   :align: center
+
+--------------
+
+To make the script executable, run the following command in a Terminal first:  
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   chmod +x gen_para_file.sh
+
+--------------
+
+Parameter file for tetrahedron array 
+------------------------------------
+
+In the ``./tools/para_file_tetrahedron_array`` diectory, a shell scrip is provided to generate the ``Parameter file`` used by ``CryDisGen``. This file enables the creating of an arra of stacking fault tetrahedrons in a FCC crysatl region, as demonstrated in `examples <Examp_array_sft>`. 
+
+.. image:: img/tool7.png
+   :width: 70%
+   :align: center
+
+--------------
+
+To make the script executable, run the following command in a Terminal first:  
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   chmod +x gen_para_file.sh
+

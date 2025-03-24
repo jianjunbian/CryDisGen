@@ -1,0 +1,61 @@
+Dislocation helix with a loop
+======================================
+
+.. image:: img/helix_with_loop.png
+   :width: 80% 
+   :align: center 
+
+--------
+
+To create an dislocation helix 
+
+**Step 1:**
+
+  Use :doc:`Tools/Fcc <Tools>` to creat an Bcc crystal sample: ``bcc_reg.lmp``, use :doc:`Tool/Helical_surface <Tools>` to create an mesh of helical surface: ``mesh.dat``
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file bcc_reg.lmp
+
+--------
+
+.. admonition:: Parameter file
+
+   Content of the :doc:`para_file <ParaFile>`:
+
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region
+   -x      1 -1  0      # lattice orientation in x-direction
+   -y      1  1 -2      # lattice orientation in y-direction
+   -z      1  1  1      # lattice orientation in z-direction
+   -lat    2.867        # lattice constant of Fe
+   -pbc    1  1  1      # boundary condition flag: '1': pbc, '0': non-pbc 
+
+   nHelix  1
+   Helix
+   -bvh    1  1  1
+   -bsh    1/2
+   -f      mesh.dat
+
+   #dislcoation
+   nLoop    1           # number of dislocaito loops
+   Loopn                # label of a dislocation section
+   -bv     1  1  1      # orientation of Burger's vector
+   -bs    -1/2          # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -dnorm  1 -1  0      # normal direction of plane with dislocation loop
+   -dc     0  25 0      # center of dislocation loop
+   -dr     25           # radius of dislocaiton loop of half of the edge of square loop
+   -lx     1  1 -2      # local x axis on slip plane 
+   -ly     1  1  1      # local y axis on slip plane 
+   -ndisl  4  2.4       # segments of a discretized dislocation loop
+

@@ -1,0 +1,56 @@
+Double helical dislocations
+===========================
+
+.. image:: img/double_helix.png
+   :width: 85% 
+   :align: center 
+
+.. code-block:: CryDisGen
+   :linenos:
+
+--------
+
+To create an dislocation helix 
+
+**Step 1:**
+
+  Use :doc:`Tools/Fcc <Tools>` to creat an Bcc crystal sample: ``bcc_reg.lmp``, use :doc:`Tool/Helical_surface <Tools>` to create two mesh files of helical surfaces: ``mesh0.dat`` and ``mesh1.dat``
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file bcc_reg.lmp
+
+--------
+
+.. admonition::  para_file 
+
+   Content of the :doc:`Parameter file <ParaFile>`:
+
+.. code-block:: Shell 
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region
+   -x     1 -1  0         # lattice orientation in x-direction
+   -y     1  1 -2         # lattice orientation in y-direction
+   -z     1  1  1         # lattice orientation in z-direction
+   -lat   2.867           # lattice constant of Fe
+   -pbc   1  1  1         # boundary condition flag: '1': pbc, '0': non-pbc 
+
+
+   nHelix 2               # total number of helices
+   Helix                  # lable of helix
+   -bvh   1  1  1         # Burgers vector of helix
+   -bsh   1/2             # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -f     mesh0.dat       # mesh of helical surface
+
+   Helix
+   -bvh   1  1  1
+   -bsh   1/2
+   -f     mesh1.dat

@@ -1,0 +1,57 @@
+Frank partial loop
+==============================
+
+.. |frank|  image:: img/frank.png
+   :width: 40%
+   :align: bottom
+
+|frank|
+
+--------
+
+To create an Frank partial dislocation loop, 
+
+**Step 1:**
+
+  Use :doc:`Tools/Fcc <Tools>` to creat an Fcc crystal sample: ``fcc_reg.lmp``
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file fcc_reg.lmp
+
+--------
+
+.. admonition:: Parameter file
+
+   Content of the :doc:`para_file <ParaFile>`:
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region
+   -x      1 -1  0      # lattice orientation in x-direction
+   -y      1  1 -2      # lattice orientation in y-direction
+   -z      1  1  1      # lattice orientation in z-direction
+   -lat    3.615        # lattice constant
+   -pbc    1  1  1      # boundary condition flag: '1': pbc, '0': non-pbc 
+
+   #dislcoation
+   nLoop   1            # number of dislocaito loops
+   Loop                 # label of a dislocation section
+   -bv     1  1  1      # orientation of Burger's vector
+   -bs    -1/3          # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -dnorm  1  1  1      # normal direction of plane with dislocation loop
+   -dc     0. 0. 0.     # center of dislocation loop
+   -dr     25           # radius of dislocaiton loopS
+   -lx     1 -1  0      # local x axis on slip plane 
+   -ly     1  1 -2      # local y axis on slip plane 
+   -ndisl  4            # segments of a discretized dislocation loop
+   
+

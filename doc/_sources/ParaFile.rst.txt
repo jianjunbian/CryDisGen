@@ -1,0 +1,110 @@
+Parameter file
+==============
+
+The paramater file is the central input of CryDisGen.
+
+It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with keywords (often prefixed with a hyphen) followed by values, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region
+   -x      1 -1  0      # lattice orientation in x-direction
+   -y      1  1  0      # lattice orientation in y-direction
+   -z      0  0  1      # lattice orientation in z-direction
+   -lat    3.615        # lattice constant
+   -pbc    1  1  1      # boundary condition flag: '1': pbc, '0': non-pbc 
+
+   #stacking fault tetrahedron
+   nTetrahedron  1      # number of stacking fault tetrahedron
+   Tetrahedron          # label of tetrahedron
+   -tc     0. 0. 0.     # center of the bottom face of tetrahedron
+   -tr     40           # radius of the circumscribe circle of the bottom face
+   -tnorm -1 -1 -1      # outward nomral direction bottom face of tetrahedron
+   -lxt    1 -1  0      # local x axis on the bottom face
+   -lyt   -1 -1  2      # local y axis on the bottom face
+
+   #dislcoation
+   nLoop   1            # number of dislocation loops
+   Loop                 # label of a dislocation section
+   -bv     1  1  1      # orientation of Burger's vector
+   -bs     1/3          # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -dnorm  1  1  1      # normal direction of plane with dislocation loop
+   -dc     0. 0  0      # center of dislocation loop
+   -dr     25           # radius of dislocaiton loopS
+   -lx     1 -1  0      # local x axis on slip plane 
+   -ly     1  1 -2      # local y axis on slip plane 
+   -ndisl  4            # segments of a discretized dislocation loop
+
+   #dislocation helix
+   nHelix 1             # number of dislocation helix
+   Helix                # lable of a dislocation helix
+   -bvh   1  1  1       # Burgers vecotr of the helix
+   -bsh   1/2           # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
+   -f     mesh.dat      # mesh of the helical surface
+
+General Format
+--------------
+**Comments**: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).
+
+**Keywords**: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.
+
+**Whitespace**: Keywords and values are separated by spaces or tabs, with consistent spacing for readability.
+
+**Section Labels**: Some keywords (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.
+
+
+Sections 
+--------
+**Crystal Region** 
+
+* *Purpose*: Defines the lattice properties and boundary conditions of the crystal.
+
+* *Keyword*: 
+
+  * *Region* (marks the start of this section).
+
+**Stacking Fault Tetrahedron**
+
+* *Purpose*: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.
+
+* *Keywords*: 
+
+  * *nTetrahedron*: Specifies the number of tetrahedrons to generate (e.g., 1).
+  * *Tetrahedron*: Labels the start of a tetrahedron definition
+
+**Dislocation Loop**
+
+* *Purpose*: Defines dislocation loops, another type of crystal defect.
+
+* *Keywords*:
+
+  * *nLoop*: Specifies the number of dislocation loops (e.g., 1).
+  * *Loop*: Labels the start of a dislocation loop definition.
+
+**Dislocation Helix**
+
+* *Purpose*: Defines dislocation helix, a type of dislocation 
+
+* *Keywords*:
+
+  * *nHelix*: Specifies the number of dislocation helix (e.g., 1).
+  * *Helix*:  Labels the start of a dislocation helix definition.
+
+Key Characteristics
+-------------------
+**Hierarchical Structure**: The file is organized into sections (Region, Tetrahedron, Loop), each with specific parameters, allowing modular defect definitions.
+
+**Vector-Based Inputs**: Many parameters use three-component vectors (e.g., -x, -bv, -dnorm) to define orientations and positions in 3D space.
+
+**Flexibility**: Supports multiple defects (e.g., nTetrahedron, nLoop) with customizable attributes, making it adaptable to various simulation needs.
+
+**Units**: Assumed to align with MD conventions (e.g., angstroms for lengths), though not explicitly stated in the file.
+
+**Readability**: Comments and consistent formatting enhance user understanding and editing.
+
+Purpose and Usage
+-----------------
+This file serves as the parameter_file input for CryDisGen (as described in your earlier usage section), complementing the crystal_file by defining defects to insert into the crystal structure. It enables users to specify complex dislocation and tetrahedron configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.

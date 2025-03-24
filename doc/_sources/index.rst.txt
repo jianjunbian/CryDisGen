@@ -1,0 +1,63 @@
+.. CryDisGen Documentation documentation master file, created by
+   sphinx-quickstart on Tue Mar 18 10:17:25 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+CryDisGen Documentation ( version |version| )
+=============================================
+
+*****************
+About CryDisGen
+*****************
+
+CryDisGen represents **Cry**\ stal **Dis**\ location **Gen**\ erator.
+
+CryDisGen is a scientific software tailored for researchers and engineers working with crystal structures. Originally developed by Bian et. al. from `Xi'an University of Architecture and Technology <https://www.xauat.edu.cn>`_ and `Xi'an Jiaotong Univeristy <https://www.xjtu.edu.cn>`_, CryDisGen empowers users to create precise atomic models of general dislocation structures in crystals. With its robust modeling capabilities, this free tool supports academic, non-commercial, and commercial applications—making advanced crystallographic research more accessible and efficient. 
+Now at version 1.0, CryDisGen is actively maintained with updates from its creators, ensuring reliable performance for its users.
+
+----------
+
+.. only:: html
+
+	Once you're familiar with CryDisGen, we recommend bookmarking the :doc:`Commands page <Command>`, which provides quick access to tables with clear explanations of all CryDisGen commands.
+
+----------
+
+****************
+User Guide
+****************
+
+.. |ddp|  image:: img/ddplot.png
+   :width: 48%
+
+|ddp|  
+
+   *Core structure of a screw dislocation in single crystal FCC aluminum*.
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Contents:
+
+   Intro
+   Install
+   Usage
+   InOutFile
+   ParaFile
+   Command
+   Tools
+   Example
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Appendix:
+   
+   Contact
+   Reference
+
+.. _webbrowser:
+.. admonition:: Web Browser Compatibility
+   :class: note
+
+   The HTML version of the manual makes use of advanced features present in "modern" web browsers.  Please use the web browser such as Google Chrome, Apple Safari, or Microsoft Edge to open and read the HTML version of this manual.

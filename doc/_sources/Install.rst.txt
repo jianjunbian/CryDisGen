@@ -1,0 +1,47 @@
+Download and Install
+====================
+
+Download
+--------
+
+The binary executable file for CryDisGen is available for Ubuntu 22.04 OS. It can be download directly from `GitHub <https://www.crydisgen.org>`_
+
+----
+
+These are the files and subdirectories in the CryDisGen distribution:
+
++---------------+--------------------------------------------------------------+
+| Directory     | Content                                                      |
++===============+==============================================================+
+| README        | A brief description of the CryDisGen package                 |
++---------------+--------------------------------------------------------------+
+| LICENSE       | GNU General Public License (GPL)                             |
++---------------+--------------------------------------------------------------+
+| bin           | The binary executable file for CryDisGen is stored here      |
++---------------+--------------------------------------------------------------+
+| doc           | Documentation of CryDisGen                                   |
++---------------+--------------------------------------------------------------+
+| examples      | Examples of dislocation structures                           |
++---------------+--------------------------------------------------------------+
+| tools         | Auxiliary tools for use with CryDisGen                       |
++---------------+--------------------------------------------------------------+
+
+
+Install
+-------
+
+After downloading the binary file and saving it as ``CryDisGen``, open a Terminal, navigate to the directory where the CryDisGen is saved, and run the following command:
+
+.. code-block:: bash
+   
+   chmod +x CryDisGen
+   
+If it is needed, the path to ``CryDisGen`` can be added to the operating system's enviromental variable ``$PATH``. This allows ``CryDisGen`` to be executed anywhere without explicitly specifying its full path.  
+
+Assuming ``CryDisGen`` is save in a folder with the home directory, such as ``~/myfolder``, we can add its path to the enviromental varialbe ``$PATH`` by appending the following line to the ``~/.bashrc``:
+
+.. code-block:: bash
+
+   export PATH=~/myfolder:$PATH
+
+After completing the steps above, ``CryDisGen`` is sucessfully installed.

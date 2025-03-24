@@ -1,0 +1,113 @@
+Tags in Paramater file
+======================
+
+The parameter file uses **tags** to configure CryDisGen: **indication tags** (*Region, Loop, Tetrahedron, Helix*) specify the atom region or dislocation type, **counter tags** (*nTetrahedron, nLoop, nHelix*) define the number of dislocation objects, and **parameter tags** (e.g., *-x, -bv*) set detailed properties.
+
+Indication tags
+---------------
+
+.. note::
+   Indication tags in CryDisGen’s parameter file supply the information of the input atomic region or define dislocation object being configured. There are **Four** indication tages in current version: **Region**, **Loop**, **Tetrahedron** and **Helix**. These tags specify either the input atom region (e.g., the crystal lattice) or the type of dislocation object to be introduced (e.g., a loop or tetrahedron), providing the structural context for subsequent counter and parameter tags. Each tag initiates a block of settings that CryDisGen uses to construct the corresponding atomic-scale feature.
+
+**Region:**
+
+It indicates the following block of parameter tags defines the input atomic region. This section supplies the additional parameters for the atomic configuration. In the parameter file, only one **Region** tag and its associated block is required. If multiple tags and blocks are included, the last one overrides any previous ones, ensuring a single, final definition of the crystal region.
+
+**Loop:**
+
+It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In parameter file, each dislocation loop is corresponding to an independent **Loop** with its following block. Multiple dislocation loops can be contained in one parameter file, and there is no limitation to the number of dislocation loops.    
+
+**Tetrahedron:**
+
+Similarly, it indicates the following command block defines a stacking fault tetrahedron. In parameter file, **Tetrahedron** can be written as **Tetra** for short. Each stacking fault tetrahedron is corresponding to an independent **Tetrahedron** tag with a following command block. Multiple tetraherons can be included in parameter file, and there is no limitation to the number. 
+
+**Helix:**
+
+Similar to the previous two tags, it indicats the following command block defines a dislocation helix. All other properties are the same as prevous tags. **Helix** and its following command block define an independent dislocation helix. Multiple helices can be included in one file, and there is no limitation to the nubmer.
+
+Counter tags
+------------
+
+.. note::
+   Counter tags in CryDisGen’s parameter file specify the number of dislocation objects to be generated. It declares how many instances of a given dislocation type will follow. There are **Three** counter tags: **nLoop**, **Tetrahedron** and **nHelix**, which defines the number of dislocation loops, the number of stacking fault tetrahedrons and the number of dislocation helix in a crystal region. These tags needs to be written in the parameter only if the number of the dislocation instance is non-zero.  They can be put anywhere in the parameter file. The number of section with indication tags must match the value of N corresponding to each counter tag, or CryDisGen may encounter errors or misprocess the input.
+
+**nLoop N:**
+
+This counter tag *nLoop N* specifies the number of dislocation loop sections to be defined in CryDisGen’s parameter file. Here, N is a positive integer (e.g., 1, 2, etc.) indicating how many Loop sections follow in the file.
+
+
+**nTetrhedron N / nTetra N:**
+
+This counter *nTetrahedron* tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as *nTetra N* for short. 
+
+**nHelix N:**
+
+The counter tag *nHelix N* specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow.
+
+
+Parameter tags
+--------------
+
+.. note::
+	 Parameter tags in CryDisGen’s parameter file define the detailed configuration settings for the crystal region or dislocation objects specified by indication tags (*Region, Loop, Tetrahedron, Helix*). Prefixed with a hyphen (e.g., -x, -bv, -tc), these tags follow their associated indication tag and provide specific values—such as coordinates, vectors, or scalars—that CryDisGen uses to construct the atomic-scale structure. Each parameter tag is tailored to its section’s context, ensuring precise customization of the simulation model.
+
+**Region:**
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region 
+   -x     1 -1  0        # lattice orientation in x-direction 
+   -y     1  1 -2        # lattice orientation in y-direction
+   -z     1  1  1        # lattice orientation in z-direction
+   -lat   3.615          # lattice constant
+   -pbc   1  1  1        # boundary condition flag: '1': pbc, '0': non-pbc 
+   
+**Loop:**
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #dislcoation
+   nLoop   1             # number of dislocaito loops
+   Loop                  # label of a dislocation section
+   -bv     1  1  1       # orientation of Burgers vector
+   -bs     1/3           # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
+   -dnorm  1  1  1       # normal direction of plane with dislocation loop
+   -dc     0.2 0  0      # center of dislocation loop
+   -dr     25            # radius of dislocaiton loopS
+   -lx     1 -1  0       # local x axis on slip plane 
+   -ly     1  1 -2       # local y axis on slip plane 
+   -ndisl  4             # segments of a discretized dislocation loop
+
+**Tetrahedron:**
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #stacking fault tetrahedrion
+   nTetrahedron 1        # number of stacking fault tetrahedron
+   Tetrahedron           # label of tetrahedron
+   -tc      0. 0. 0.     # center of the bottom face of tetrahedron 
+   -tr      40           # radius of the circumscribe circle of the bottom face
+   -tnorm  -1 -1 -1      # outward nomral direction bottom face of tetrahedron
+   -lxt     1 -1  0      # local x axis on the bottom face
+   -lyt    -1 -1  2      # local y axis on the bottom face
+
+
+**Helix:**
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #dislocation helix
+   nHelix  2             # number dislocation helix
+   Helix                 # lable of dislocation helix
+   -bvh    1  1  1       # orientation of Burgers vector of helix
+   -bsh    1/2           # scalar coefficient of Burgers vector helix
+   -f      mesh0.dat     # mesh of helical surface
+
+
+

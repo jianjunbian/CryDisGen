@@ -1,0 +1,232 @@
+Stacking fault tetrohedron array
+================================
+
+.. |array_sft|  image:: img/array_sft.png
+   :width: 40%
+   :align: bottom 
+
+|array_sft|
+
+--------
+
+To create an array of stacking fault tetrahedrons in a FCC single crystal sample, 
+
+**Step 1:**
+
+  Use :doc:`Tools/Fcc <Tools>` to creat an FCC crystal sample: ``fcc_reg.lmp``, use :doc:`Tools/para_file_tetrahedron_array <Tools>` to create the Parameter file: ``para_file``;
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file fcc_reg.lmp
+
+--------
+
+.. admonition::  Parameter file 
+
+   Content of the :doc:`para_file <ParaFile>`:
+
+.. code-block:: CryDisGen
+   :linenos:
+
+    Region
+    -x 1 0 0
+    -y 0 1 0
+    -z 0 0 1
+    -lat 3.615
+    -pbc 1 1 1
+     
+    nTetrahedron 27
+    Tetrahedron           
+    -tc     -50 -50 -50   
+    -tr     20            
+    -tnorm   1  1  1 
+    -lxt     1 -1  0     
+    -lyt     1  1 -2     
+     
+    Tetrahedron           
+    -tc     -50 -50 0   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     -50 -50 50   
+    -tr     20            
+    -tnorm  -1 -1  1 
+    -lxt    -1  1  0     
+    -lyt    -1 -1 -2     
+     
+    Tetrahedron           
+    -tc     -50 0 -50   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     -50 0 0   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     -50 0 50   
+    -tr     20            
+    -tnorm   1 -1 -1 
+    -lxt     1  1  0     
+    -lyt     1 -1  2     
+     
+    Tetrahedron           
+    -tc     -50 50 -50   
+    -tr     20            
+    -tnorm   1  1  1 
+    -lxt     1 -1  0     
+    -lyt     1  1 -2     
+     
+    Tetrahedron           
+    -tc     -50 50 0   
+    -tr     20            
+    -tnorm  -1  1  1 
+    -lxt     1  1  0     
+    -lyt    -1  1 -2     
+     
+    Tetrahedron           
+    -tc     -50 50 50   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     0 -50 -50   
+    -tr     20            
+    -tnorm   1  1 -1 
+    -lxt    -1  1  0     
+    -lyt     1  1  2     
+     
+    Tetrahedron           
+    -tc     0 -50 0   
+    -tr     20            
+    -tnorm   1  1 -1 
+    -lxt    -1  1  0     
+    -lyt     1  1  2     
+     
+    Tetrahedron           
+    -tc     0 -50 50   
+    -tr     20            
+    -tnorm   1  1  1 
+    -lxt     1 -1  0     
+    -lyt     1  1 -2     
+     
+    Tetrahedron           
+    -tc     0 0 -50   
+    -tr     20            
+    -tnorm  -1  1  1 
+    -lxt     1  1  0     
+    -lyt    -1  1 -2     
+     
+    Tetrahedron           
+    -tc     0 0 0   
+    -tr     20            
+    -tnorm  -1 -1  1 
+    -lxt    -1  1  0     
+    -lyt    -1 -1 -2     
+     
+    Tetrahedron           
+    -tc     0 0 50   
+    -tr     20            
+    -tnorm   1 -1  1 
+    -lxt    -1 -1  0     
+    -lyt     1 -1 -2     
+     
+    Tetrahedron           
+    -tc     0 50 -50   
+    -tr     20            
+    -tnorm   1 -1  1 
+    -lxt    -1 -1  0     
+    -lyt     1 -1 -2     
+     
+    Tetrahedron           
+    -tc     0 50 0   
+    -tr     20            
+    -tnorm   1  1 -1 
+    -lxt    -1  1  0     
+    -lyt     1  1  2     
+     
+    Tetrahedron           
+    -tc     0 50 50   
+    -tr     20            
+    -tnorm   1 -1  1 
+    -lxt    -1 -1  0     
+    -lyt     1 -1 -2     
+     
+    Tetrahedron           
+    -tc     50 -50 -50   
+    -tr     20            
+    -tnorm  -1 -1 -1 
+    -lxt     1 -1  0     
+    -lyt    -1 -1  2     
+     
+    Tetrahedron           
+    -tc     50 -50 0   
+    -tr     20            
+    -tnorm  -1 -1  1 
+    -lxt    -1  1  0     
+    -lyt    -1 -1 -2     
+     
+    Tetrahedron           
+    -tc     50 -50 50   
+    -tr     20            
+    -tnorm   1 -1  1 
+    -lxt    -1 -1  0     
+    -lyt     1 -1 -2     
+     
+    Tetrahedron           
+    -tc     50 0 -50   
+    -tr     20            
+    -tnorm  -1  1  1 
+    -lxt     1  1  0     
+    -lyt    -1  1 -2     
+     
+    Tetrahedron           
+    -tc     50 0 0   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     50 0 50   
+    -tr     20            
+    -tnorm   1 -1  1 
+    -lxt    -1 -1  0     
+    -lyt     1 -1 -2     
+     
+    Tetrahedron           
+    -tc     50 50 -50   
+    -tr     20            
+    -tnorm  -1  1 -1 
+    -lxt    -1 -1  0     
+    -lyt    -1  1  2     
+     
+    Tetrahedron           
+    -tc     50 50 0   
+    -tr     20            
+    -tnorm   1  1  1 
+    -lxt     1 -1  0     
+    -lyt     1  1 -2     
+     
+    Tetrahedron           
+    -tc     50 50 50   
+    -tr     20            
+    -tnorm  -1  1  1 
+    -lxt     1  1  0     
+    -lyt    -1  1 -2     
+     

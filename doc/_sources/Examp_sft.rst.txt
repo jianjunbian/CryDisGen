@@ -1,0 +1,51 @@
+Stacking fault tetrahedron
+==========================
+
+.. |sft|  image:: img/sft.png
+   :width: 40%
+   :align: bottom 
+
+|sft|
+
+--------
+
+To create an stacking fault tetrahedron 
+
+**Step 1:**
+
+  Use :doc:`Tools/Fcc <Tools>` to creat an Fcc crystal sample: ``fcc_reg.lmp``
+
+**Step 2:**
+
+  Open terminal, run the following command:
+
+.. code-block:: Shell 
+   :linenos:
+
+   CryDisGen para_file fcc_reg.lmp
+
+--------
+
+.. admonition::  Parameter file 
+
+   Content of the :doc:`para_file <ParaFile>`:
+
+.. code-block:: CryDisGen
+   :linenos:
+
+   #those started with '#' are comment lines
+   #crystal region
+   Region
+   -x       1 -1  0      # lattice orientation in x-direction
+   -y       1  1  0      # lattice orientation in y-direction
+   -z       0  0  1      # lattice orientation in z-direction
+   -lat     3.615        # lattice constant
+   -pbc     1  1  1      # boundary condition flag: '1': pbc, '0': non-pbc 
+
+   nTetrahedron  1       # number of stacking fault tetrahedron
+   Tetrahedron           # label of tetrahedron
+   -tc     -0. 0. 0.     # center of the bottom face of tetrahedron
+   -tr      40           # radius of the circumscribe circle of the bottom face
+   -tnorm  -1 -1 -1      # outward nomral direction bottom face of tetrahedron
+   -lxt     1 -1  0      # local x axis on the bottom face
+   -lyt    -1 -1  2      # local y axis on the bottom face
