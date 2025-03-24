@@ -1,0 +1,7 @@
+Bcc-reg 200 200 200 -l 1 -1 0 -m 1 1 -2 -n 1 1 1 Fe
+
+Helical0:
+Helical_pitch -xg 1 -1 0 -yg 1 1 -2 -zg 1 1 1 -xl 1 1 -2 -yl -1 1 0 -zl 1 1 1 25 1080 45 
+
+kelical1:
+Helical_pitch -xg 1 -1 0 -yg 1 1 -2 -zg 1 1 1 -xl -1 -1 2 -yl 1 -1 0 -zl 1 1 1 25 1080 45 

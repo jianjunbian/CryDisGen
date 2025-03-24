@@ -1,0 +1,279 @@
+
+Region
+-x 1 0 0
+-y 0 1 0
+-z 0 0 1
+-lat 3.301
+-pbc 1 1 1
+ 
+nLoop 27
+Loop           
+-bv     1  1  1 
+-bs     1/2           
+-dnorm  1  1  1 
+-dc     -60 -60 -60   
+-dr     20            
+-lx      1 -1  0     
+-ly      1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     -60 -60 0   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     -60 -60 60   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     -60 0 -60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     -60 0 0   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1 -1 
+-bs     1/2           
+-dnorm  -1  1 -1 
+-dc     -60 0 60   
+-dr     20            
+-lx      1  1  0     
+-ly      1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1  1 
+-bs     1/2           
+-dnorm  1  1  1 
+-dc     -60 60 -60   
+-dr     20            
+-lx      1 -1  0     
+-ly      1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1 -1 
+-bs     1/2           
+-dnorm  -1  1 -1 
+-dc     -60 60 0   
+-dr     20            
+-lx      1  1  0     
+-ly      1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     -60 60 60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     0 -60 -60   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     0 -60 0   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1  1 
+-bs     1/2           
+-dnorm  1  1  1 
+-dc     0 -60 60   
+-dr     20            
+-lx      1 -1  0     
+-ly      1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1 -1 
+-bs     1/2           
+-dnorm  -1  1 -1 
+-dc     0 0 -60   
+-dr     20            
+-lx      1  1  0     
+-ly      1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     0 0 0   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     0 0 60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     0 60 -60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     0 60 0   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     0 60 60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1  1 
+-bs     1/2           
+-dnorm  1  1  1 
+-dc     60 -60 -60   
+-dr     20            
+-lx      1 -1  0     
+-ly      1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1 -1 
+-bs     1/2           
+-dnorm  1  1 -1 
+-dc     60 -60 0   
+-dr     20            
+-lx      1 -1  0     
+-ly     -1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     60 -60 60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1 -1 
+-bs     1/2           
+-dnorm  -1  1 -1 
+-dc     60 0 -60   
+-dr     20            
+-lx      1  1  0     
+-ly      1 -1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     60 0 0   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     60 0 60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1  1 
+-bs     1/2           
+-dnorm  -1  1  1 
+-dc     60 60 -60   
+-dr     20            
+-lx      1  1  0     
+-ly     -1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     1  1  1 
+-bs     1/2           
+-dnorm  1  1  1 
+-dc     60 60 0   
+-dr     20            
+-lx      1 -1  0     
+-ly      1  1 -2     
+-ndisl  6             
+ 
+Loop           
+-bv     -1  1 -1 
+-bs     1/2           
+-dnorm  -1  1 -1 
+-dc     60 60 60   
+-dr     20            
+-lx      1  1  0     
+-ly      1 -1 -2     
+-ndisl  6             
+ 

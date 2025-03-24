@@ -1,0 +1,59 @@
+
+Region
+-x 1 0 0
+-y 0 1 0
+-z 0 0 1
+-lat 3.303
+-pbc 1 1 1
+ 
+nLoop 5
+Loop           
+-bv      1  1  1
+-bs     1/2           
+-dnorm   1 -1  0 
+-dc     0 0 -60   
+-dr     25            
+-lx      1  1  0     
+-ly      0  0  1     
+-ndisl  8             
+ 
+Loop           
+-bv      1  1  1
+-bs     1/2           
+-dnorm   1  1  0 
+-dc     0 0 -30   
+-dr     25            
+-lx     -1  1  0     
+-ly      0  0  1     
+-ndisl  8             
+ 
+Loop           
+-bv      1  1  1
+-bs     1/2           
+-dnorm   1 -1  0 
+-dc     0 0 0   
+-dr     25            
+-lx      1  1  0     
+-ly      0  0  1     
+-ndisl  8             
+ 
+Loop           
+-bv      1  1  1
+-bs     1/2           
+-dnorm   1  1  0 
+-dc     0 0 30   
+-dr     25            
+-lx     -1  1  0     
+-ly      0  0  1     
+-ndisl  8             
+ 
+Loop           
+-bv      1  1  1
+-bs     1/2           
+-dnorm   1 -1  0 
+-dc     0 0 60   
+-dr     25            
+-lx      1  1  0     
+-ly      0  0  1     
+-ndisl  8             
+ 
