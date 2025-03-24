@@ -1,0 +1,169 @@
+----------------------------------------------------
+Jan. 17th 2024
+----------------------------------------------------
+a code to create dislocations in crystals 
+
+Reference: 
+[1] Chinese Journal of Computational Physics, 2010, 27(2): 195-202
+
+----------------------------------------------------
+Feb. 1st 2024
+----------------------------------------------------
+the dislocation loop is created inside the perfect initial crystal,
+to transfor the dislocation to current configuration, we move the 
+atoms of crystal with dislocation according to the displaceement field
+that is expressed as:
+
+du[i] = pos[i]_current - pos[i]_initial
+
+----------------------------------------------------
+Apr. 16th 2024
+----------------------------------------------------
+Reset the atom type of the initial dislocation
+
+----------------------------------------------------
+Apr. 17th 2024
+----------------------------------------------------
+Inpute file:
+  Reference file
+  Current file
+
+-----------------------------------------------------------------------------
+June 10th 2024
+-----------------------------------------------------------------------------
+New implementation: create Shockly partial dislocaiton loop
+
+-----------------------------------------------------------------------------
+June 25th 2024
+-----------------------------------------------------------------------------
+New parameter of the local coordination systems on slip plane
+To generate tetrahedron (new plan)
+
+-----------------------------------------------------------------------------
+August 1st 2024 at 23:48
+-----------------------------------------------------------------------------
+Input paramaters are inclued in a text file whose name is one paramater in CLI
+
+-----------------------------------------------------------------------------
+August 3rd 2024 at 21:26
+-----------------------------------------------------------------------------
+Add implemtation of tetrahedron stacking faults
+
+-----------------------------------------------------------------------------
+August 5th 2024 at 19:24
+-----------------------------------------------------------------------------
+New modifications:
+0. Modify the hints printed on screen when running program
+1. Add memory deallocation in function DeletaAtom(int)
+2. Number of deleted atoms is rectified
+3. Atom id in output file is reset when operation of deleting atoms is involved
+4. In function ApplyDisplacement(int), atom displacement is recalculated based
+   on atom_init[i].coord
+5. Check if axis of local coordination system are orthogonal
+
+-----------------------------------------------------------------------------
+August 6th 2024 at 21:37
+-----------------------------------------------------------------------------
+0. new functions to add atoms when create an extrinsic Frank dislocation loop (not finished)
+1. Finished the new function
+
+-----------------------------------------------------------------------------
+August 7th 2024 at 16:05
+-----------------------------------------------------------------------------
+0. Try to add a new function based on an input file where coordination
+   of mesh grid of a general surface are supplied. 
+1. Done. (August 9th 0:52)
+
+-----------------------------------------------------------------------------
+August 10th 2024 at 20:40
+-----------------------------------------------------------------------------
+0. Try to create combined dislocations
+1. Succeeded! (August 10th 2024 at 23:50)
+
+-----------------------------------------------------------------------------
+August 10th 2024 at 20:40
+-----------------------------------------------------------------------------
+0. Modify the hints of the code when error occurs.
+1. Output the displacement field to the dump-file
+
+-----------------------------------------------------------------------------
+August 14th 2024 at 22:48
+-----------------------------------------------------------------------------
+0. Add paramaters to control boundary condition
+
+-----------------------------------------------------------------------------
+August 15th 2024 at 17:38
+-----------------------------------------------------------------------------
+0. Slightly increase the size of model box when non-pbc is applied, which is 
+   used to prevent running error in lammps when some atoms lay right on the 
+	 inital boundary in case of non-pbc.
+
+-----------------------------------------------------------------------------
+Sep. 10th 2024 at 16:59
+-----------------------------------------------------------------------------
+
+0. fixed some bugs in AddAtom(int)  
+	 e.g., the size of Burger's vector can be negative, in which case added 
+	 atoms are not found properly.
+1. releas the memory after all all added atoms are copied to the atoms array.
+2. size of array u[i] that stores atom displacement should be adjusted when 
+   new atoms are added
+3. In DiscretizeLoopTe(int), the vector for calculating the forth vertex of a
+   tetrahedron is incorrect
+
+-----------------------------------------------------------------------------
+Sep. 12th 2024 at 20:23
+-----------------------------------------------------------------------------
+
+0. Stacking fault tetrahedron consists of one Frank loop and three Shockly
+   partial loop, which was mistaken in previous versions
+
+
+-----------------------------------------------------------------------------
+Sep. 13th 2024 at 23:42
+-----------------------------------------------------------------------------
+
+0. find a new bug, when center of SF tetrahedron lies in some positions, some 
+   wrong atoms are deleted. 
+
+	 For example:
+      #para_file
+			Region
+			-x     1 -1 0         # lattice orientation in x-direction
+			-y     1 1 0          # lattice orientation in y-direction
+			-z     0 0 1          # lattice orientation in z-direction
+			-lat   3.615          # lattice constant
+			-pbc   1 1 1          # boundary condition flag: '1': pbc, '0': non-pbc 
+
+			SFTetrahedron 1       # number of stacking fault tetrahedron
+			Tetrahedron           # label of tetrahedron
+      #-tc 30.674280 30.674280 100 #28.92    # center of the bottom face of tetrahedron
+      #-tc 0.674280 0.674280 10 #28.92    # center of the bottom face of tetrahedron
+			-tc     0 5 10.845    # center of the bottom face of tetrahedron
+			-tr     22            # radius of the circumscribe circle of the bottom face
+			-tnorm  -1 -1 -1      # outward nomral direction bottom face of tetrahedron
+			-lxt     1 -1  0      # local x axis on the bottom face
+			-lyt    -1 -1  2 
+
+-----------------------------------------------------------------------------
+Sep. 14th 2024 at 17:53
+-----------------------------------------------------------------------------
+
+0. the above bug is fixed. In the function DeleteAtomTe(), pbc is not considered
+   when deleting atom opereation is conducted.
+
+-----------------------------------------------------------------------------
+Jan. 10th 2025 at 11:08
+-----------------------------------------------------------------------------
+
+0. Add a paramater, ratio of the edge along x-axis to that along y-axis, 
+   to control the shape of the rectangle dislocation loop, the default value is 1
+1. by using functions strcspn() and strncpy(), the comments started with '#' is properly 
+   removed, no matter whether the whole line is comment or only part of it is comment
+2. When reading the commands from paramater file, the paramater list of each line is checked.
+   WARNNING: at present version, only the number of paramater list is checked. 
+
+
+
+
+
