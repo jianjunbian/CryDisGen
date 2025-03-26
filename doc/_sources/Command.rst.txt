@@ -49,7 +49,7 @@ Parameter tags
 --------------
 
 .. note::
-	 Parameter tags in CryDisGen’s parameter file define the detailed configuration settings for the crystal region or dislocation objects specified by indication tags (*Region, Loop, Tetrahedron, Helix*). Prefixed with a hyphen (e.g., -x, -bv, -tc), these tags follow their associated indication tag and provide specific values—such as coordinates, vectors, or scalars—that CryDisGen uses to construct the atomic-scale structure. Each parameter tag is tailored to its section’s context, ensuring precise customization of the simulation model.
+   Parameter tags in CryDisGen’s parameter file define the detailed configuration settings for the crystal region or dislocation objects specified by indication tags (*Region, Loop, Tetrahedron, Helix*). Prefixed with a hyphen (e.g., -x, -bv, -tc), these tags follow their associated indication tag and provide specific values—such as coordinates, vectors, or scalars—that CryDisGen uses to construct the atomic-scale structure. Each parameter tag is tailored to its section’s context, ensuring precise customization of the simulation model.
 
 **Region:**
 
@@ -70,7 +70,7 @@ Parameter tags
 .. code-block:: CryDisGen
    :linenos:
 
-   #dislcoation
+   #dislocation loop
    nLoop   1             # number of dislocaito loops
    Loop                  # label of a dislocation section
    -bv     1  1  1       # orientation of Burgers vector
@@ -113,6 +113,6 @@ Parameter tags
 .. important::
    The lines of tags in the parameter file can be arranged in any order. To enhancethe readability, it is recommended to group **parameter tags** defining the same dislocation instance or atomic region together into a block, placing them after the corresponding **indication and counter tags**, as illustrated in the examples above.
 
-	 
+   
 
 
