@@ -10,11 +10,11 @@ Double helical dislocations
 
 --------
 
-To create an dislocation helix 
+To create double dislocation helices, 
 
 **Step 1:**
 
-  Use :doc:`Tools/Fcc <Tools>` to creat an Bcc crystal sample: ``bcc_reg.lmp``, use :doc:`Tool/Helical_surface <Tools>` to create two mesh files of helical surfaces: ``mesh0.dat`` and ``mesh1.dat``
+  Use the tool in subdirectory :doc:`tools/Fcc <Tools>` to creat an BCC crystal sample: ``bcc_reg.lmp``, use the shell script in subdirectory :doc:`tool/Helical_surface <Tools>` to create the mesh files of two helical surfaces: ``mesh0.dat`` and ``mesh1.dat``;
 
 **Step 2:**
 
@@ -31,7 +31,7 @@ To create an dislocation helix
 
    Content of the :doc:`Parameter file <ParaFile>`:
 
-.. code-block:: Shell 
+.. code-block:: CryDisGen 
    :linenos:
 
    #those started with '#' are comment lines

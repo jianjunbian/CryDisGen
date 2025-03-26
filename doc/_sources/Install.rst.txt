@@ -4,7 +4,7 @@ Download and Install
 Download
 --------
 
-The binary executable file for CryDisGen is available for Ubuntu 22.04 OS. It can be download directly from `GitHub <https://www.crydisgen.org>`_
+The binary executable file for CryDisGen is available for Ubuntu 22.04 OS. It can be download directly from `GitHub <https://github.com/JianJunBian/CryDisGen.git>`_
 
 ----
 

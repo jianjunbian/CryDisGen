@@ -3,7 +3,7 @@ Parameter file
 
 The paramater file is the central input of CryDisGen.
 
-It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with keywords (often prefixed with a hyphen) followed by values, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
+It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which are either followed with vaulues or not, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
 
 .. code-block:: CryDisGen
    :linenos:
@@ -39,21 +39,21 @@ It is a structured ASCII text file designed to supply configuration details for 
    -ndisl  4            # segments of a discretized dislocation loop
 
    #dislocation helix
-   nHelix 1             # number of dislocation helix
+   nHelix  1            # number of dislocation helix
    Helix                # lable of a dislocation helix
-   -bvh   1  1  1       # Burgers vecotr of the helix
-   -bsh   1/2           # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
-   -f     mesh.dat      # mesh of the helical surface
+   -bvh    1  1  1      # Burgers vecotr of the helix
+   -bsh    1/2          # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
+   -f      mesh.dat     # mesh of the helical surface
 
 General Format
 --------------
 **Comments**: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).
 
-**Keywords**: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.
+**Tags**: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.
 
-**Whitespace**: Keywords and values are separated by spaces or tabs, with consistent spacing for readability.
+**Whitespace**: Tags and values are separated by spaces or tabs, with consistent spacing for readability.
 
-**Section Labels**: Some keywords (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.
+**Section Labels**: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.
 
 
 Sections 
@@ -62,7 +62,7 @@ Sections
 
 * *Purpose*: Defines the lattice properties and boundary conditions of the crystal.
 
-* *Keyword*: 
+* *Tag*: 
 
   * *Region* (marks the start of this section).
 
@@ -70,7 +70,7 @@ Sections
 
 * *Purpose*: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.
 
-* *Keywords*: 
+* *Tags*: 
 
   * *nTetrahedron*: Specifies the number of tetrahedrons to generate (e.g., 1).
   * *Tetrahedron*: Labels the start of a tetrahedron definition
@@ -79,7 +79,7 @@ Sections
 
 * *Purpose*: Defines dislocation loops, another type of crystal defect.
 
-* *Keywords*:
+* *Tags*:
 
   * *nLoop*: Specifies the number of dislocation loops (e.g., 1).
   * *Loop*: Labels the start of a dislocation loop definition.
@@ -88,7 +88,7 @@ Sections
 
 * *Purpose*: Defines dislocation helix, a type of dislocation 
 
-* *Keywords*:
+* *Tags*:
 
   * *nHelix*: Specifies the number of dislocation helix (e.g., 1).
   * *Helix*:  Labels the start of a dislocation helix definition.
@@ -108,3 +108,4 @@ Key Characteristics
 Purpose and Usage
 -----------------
 This file serves as the parameter_file input for CryDisGen (as described in your earlier usage section), complementing the crystal_file by defining defects to insert into the crystal structure. It enables users to specify complex dislocation and tetrahedron configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.
+

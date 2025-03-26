@@ -13,9 +13,10 @@ CryDisGen can be run in Terminal by entering the following command:
 
 ------
 
-Note that the firt input paramater, ``parameter_file``, refers to the name of an ACSII text file 
-containing the commands that specify the informaiton of the dislocatoins. The second paramater, ``crystal_file``, is the name of an ASCII text file providing the structural region where the dislocation will be inserted. Both files must be prepared by the user in advance. To write a ``parameter_file``, please refer to :doc:`Parameter file page <ParaFile>`. To prepare a ``crystal_file``, please use the :doc:`tools <Tools>` released with ``CryDigGen``.
+Note that the first input paramater, ``parameter_file``, refers to the name of an ACSII text file containing the tags that specify the informaiton of the dislocatoins. The second paramater, ``crystal_file``, is the name of an ASCII text file providing the structural region where the dislocation will be inserted. Both files must be prepared by the user in advance. 
 
-After enterign the above command in Terminal and pressing Enter, if no error occurs, an output file named ``outfile.lmp`` will be generated in the same locaiton where the command is executes. 
+To create a ``parameter_file``, please refer to the :doc:`Parameter file page <ParaFile>`. To prepare a ``crystal_file``, you could either use the :doc:`tools <Tools>` provided with ``CryDisGen``, or use any other software that can create a model with its format compatible with the `read_data <https://docs.lammps.org/read_data.html>`_ command of `LAMMPS <https://www.lammps.org>`_.
+
+After entering the above command in the Terminal and pressing the Enter key, if no error occurs, an output file named ``outfile.lmp`` will be generated in the same directory where the command is executed. 
  
-Both the input and output files of crystal structure can be directly read by `LAMMPS <https://www.lammps.org>`_ or visualzied by `OVITO <http://www.ovito.org>`_
+Both the input and output files of crystal structure can be directly read by the `read_data <https://docs.lammps.org/read_data.html>`_ command of `LAMMPS <https://www.lammps.org>`_ or visualzied by `OVITO <http://www.ovito.org>`_

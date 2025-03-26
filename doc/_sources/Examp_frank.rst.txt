@@ -9,11 +9,11 @@ Frank partial loop
 
 --------
 
-To create an Frank partial dislocation loop, 
+To create a Frank partial dislocation loop, 
 
 **Step 1:**
 
-  Use :doc:`Tools/Fcc <Tools>` to creat an Fcc crystal sample: ``fcc_reg.lmp``
+  Use the tool in subdirectory :doc:`tools/Fcc <Tools>` to creat an FCC single crystal sample: ``fcc_reg.lmp``;
 
 **Step 2:**
 

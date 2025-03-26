@@ -9,11 +9,11 @@ Dislocation helix
 
 --------
 
-To create an dislocation helix 
+To create a dislocation helix,
 
 **Step 1:**
 
-  Use :doc:`Tools/Fcc <Tools>` to creat an Bcc crystal sample: ``bcc_reg.lmp``, use :doc:`Tool/Helical_surface <Tools>` to create an mesh of helical surface: ``mesh.dat``
+  Use the tool in subdirectory :doc:`tools/Fcc <Tools>` to creat a BCC single crystal sample: ``bcc_reg.lmp``, use the shell script in subdirectory :doc:`Tool/Helical_surface <Tools>` to create the mesh of a helical surface: ``mesh.dat``;
 
 **Step 2:**
 

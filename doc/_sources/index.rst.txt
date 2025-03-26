@@ -19,7 +19,7 @@ Now at version 1.0, CryDisGen is actively maintained with updates from its creat
 
 .. only:: html
 
-	Once you're familiar with CryDisGen, we recommend bookmarking the :doc:`Commands page <Command>`, which provides quick access to tables with clear explanations of all CryDisGen commands.
+	Once you're familiar with CryDisGen, we recommend bookmarking the page :doc:`Tags in Parameter file <Command>`, which provides quick access to all tags with clear explanations that the CryDisGen code uses in the Parameter file.
 
 ----------
 

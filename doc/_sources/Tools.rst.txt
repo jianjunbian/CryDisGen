@@ -1,7 +1,7 @@
 Tools
 =====
 
-These are the subdirectory in ``./tools``, where sereral useful tools are released alongside ``CryDisGen``.
+These are the subdirectories in ``./tools``, where several useful tools are released alongside ``CryDisGen``.
 
 +-----------------------------+----------------------------------------------------------------------+
 | Items                       | Description                                                          |

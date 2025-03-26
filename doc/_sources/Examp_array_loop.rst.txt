@@ -9,11 +9,11 @@ Full dislocation loop array
 
 --------
 
-To create an array of dislocation loops in a BCC single crystal sample, 
+To create an array of full dislocation loops in a BCC single crystal sample, 
 
 **Step 1:**
 
-  Use :doc:`Tools/Bcc <Tools>` to creat an BCC crystal sample: ``bcc_reg.lmp``, use :doc:`Tools/para_file_loop_array <Tools>` to create the Parameter file: ``para_file``;
+  Use the tool in subdirectory :doc:`tools/Bcc <Tools>` to creat a BCC single crystal sample: ``bcc_reg.lmp``, use the shell script in subdirectory :doc:`tools/para_file_loop_array <Tools>` to create the parameter file: ``para_file``;
 
 **Step 2:**
 

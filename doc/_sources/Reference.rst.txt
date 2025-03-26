@@ -5,5 +5,5 @@ if you pubish results obtained with CryDisGen, please cite the software in your 
 
 .. hint::
 
-   J. Bian, W. Yuan, G. Wang. **Cry**\ stal **Dis**\ locaiotn **Gen**\ erator (CryDisGen): A versatile toolkit to create general dislocation structures in FCC/BCC crystals. (To be published)
+   J. Bian, W. Yuan, Z. Shao, G. Wang. **Cry**\ stal **Dis**\ locaiotn **Gen**\ erator (CryDisGen): A versatile toolkit to create general dislocation structures in FCC/BCC crystals. (To be published)
 
