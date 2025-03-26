@@ -96,7 +96,7 @@
 <h2><span class="section-number">6.1. </span>Indication tags<a class="headerlink" href="#indication-tags" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Indication tags in CryDisGen’s parameter file supply the information of the input atomic region or define dislocation object being configured. There are <strong>Four</strong> indication tages in current version: <strong>Region</strong>, <strong>Loop</strong>, <strong>Tetrahedron</strong> and <strong>Helix</strong>. These tags specify either the input atom region (e.g., the crystal lattice) or the type of dislocation object to be introduced (e.g., a loop or tetrahedron), providing the structural context for subsequent counter and parameter tags. Each tag initiates a block of settings that CryDisGen uses to construct the corresponding atomic-scale feature.</p>
+<p>Indication tags in CryDisGen’s parameter file supply the information of the input atomic region or define dislocation object being configured. There are <strong>Four</strong> indication tags in current version: <strong>Region</strong>, <strong>Loop</strong>, <strong>Tetrahedron</strong> and <strong>Helix</strong>. These tags specify either the input atom region (e.g., the crystal lattice) or the type of dislocation object to be introduced (e.g., a loop or tetrahedron), providing the structural context for subsequent counter and parameter tags. Each tag initiates a block of settings that CryDisGen uses to construct the corresponding atomic-scale feature.</p>
 </div>
 <p><strong>Region:</strong></p>
 <p>It indicates the following block of parameter tags defines the input atomic region. This section supplies the additional parameters for the atomic configuration. In the parameter file, only one <strong>Region</strong> tag and its associated block is required. If multiple tags and blocks are included, the last one overrides any previous ones, ensuring a single, final definition of the crystal region.</p>
@@ -170,6 +170,10 @@
 <span class="linenos">5</span><span class="n">-bsh</span>    1/2           <span class="c"># scalar coefficient of Burgers vector helix</span>
 <span class="linenos">6</span><span class="n">-f</span>      mesh0.dat     <span class="c"># mesh of helical surface</span>
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The lines of tags in the parameter file can be arranged in any order. To enhancethe readability, it is recommended to group <strong>parameter tags</strong> defining the same dislocation instance or atomic region together into a block, placing them after the corresponding <strong>indication and counter tags</strong>, as illustrated in the examples above.</p>
 </div>
 </section>
 </section>

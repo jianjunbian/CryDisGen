@@ -93,7 +93,7 @@
   <section id="parameter-file">
 <h1><span class="section-number">5. </span>Parameter file<a class="headerlink" href="#parameter-file" title="Link to this heading"></a></h1>
 <p>The paramater file is the central input of CryDisGen.</p>
-<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with keywords (often prefixed with a hyphen) followed by values, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
+<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which are either followed with vaulues or not, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
 <div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">#those started with &#39;#&#39; are comment lines</span>
 <span class="linenos"> 2</span><span class="c">#crystal region</span>
 <span class="linenos"> 3</span><span class="k">Region</span>
@@ -125,26 +125,26 @@
 <span class="linenos">29</span><span class="n">-ndisl</span>  4            <span class="c"># segments of a discretized dislocation loop</span>
 <span class="linenos">30</span>
 <span class="linenos">31</span><span class="c">#dislocation helix</span>
-<span class="linenos">32</span><span class="k">nHelix</span> 1             <span class="c"># number of dislocation helix</span>
+<span class="linenos">32</span><span class="k">nHelix</span>  1            <span class="c"># number of dislocation helix</span>
 <span class="linenos">33</span><span class="k">Helix</span>                <span class="c"># lable of a dislocation helix</span>
-<span class="linenos">34</span><span class="n">-bvh</span>   1  1  1       <span class="c"># Burgers vecotr of the helix</span>
-<span class="linenos">35</span><span class="n">-bsh</span>   1/2           <span class="c"># scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
-<span class="linenos">36</span><span class="n">-f</span>     mesh.dat      <span class="c"># mesh of the helical surface</span>
+<span class="linenos">34</span><span class="n">-bvh</span>    1  1  1      <span class="c"># Burgers vecotr of the helix</span>
+<span class="linenos">35</span><span class="n">-bsh</span>    1/2          <span class="c"># scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
+<span class="linenos">36</span><span class="n">-f</span>      mesh.dat     <span class="c"># mesh of the helical surface</span>
 </pre></div>
 </div>
 <section id="general-format">
 <h2><span class="section-number">5.1. </span>General Format<a class="headerlink" href="#general-format" title="Link to this heading"></a></h2>
 <p><strong>Comments</strong>: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).</p>
-<p><strong>Keywords</strong>: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.</p>
-<p><strong>Whitespace</strong>: Keywords and values are separated by spaces or tabs, with consistent spacing for readability.</p>
-<p><strong>Section Labels</strong>: Some keywords (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.</p>
+<p><strong>Tags</strong>: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.</p>
+<p><strong>Whitespace</strong>: Tags and values are separated by spaces or tabs, with consistent spacing for readability.</p>
+<p><strong>Section Labels</strong>: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.</p>
 </section>
 <section id="sections">
 <h2><span class="section-number">5.2. </span>Sections<a class="headerlink" href="#sections" title="Link to this heading"></a></h2>
 <p><strong>Crystal Region</strong></p>
 <ul class="simple">
 <li><p><em>Purpose</em>: Defines the lattice properties and boundary conditions of the crystal.</p></li>
-<li><p><em>Keyword</em>:</p>
+<li><p><em>Tag</em>:</p>
 <ul>
 <li><p><em>Region</em> (marks the start of this section).</p></li>
 </ul>
@@ -153,7 +153,7 @@
 <p><strong>Stacking Fault Tetrahedron</strong></p>
 <ul class="simple">
 <li><p><em>Purpose</em>: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.</p></li>
-<li><p><em>Keywords</em>:</p>
+<li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nTetrahedron</em>: Specifies the number of tetrahedrons to generate (e.g., 1).</p></li>
 <li><p><em>Tetrahedron</em>: Labels the start of a tetrahedron definition</p></li>
@@ -163,7 +163,7 @@
 <p><strong>Dislocation Loop</strong></p>
 <ul class="simple">
 <li><p><em>Purpose</em>: Defines dislocation loops, another type of crystal defect.</p></li>
-<li><p><em>Keywords</em>:</p>
+<li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nLoop</em>: Specifies the number of dislocation loops (e.g., 1).</p></li>
 <li><p><em>Loop</em>: Labels the start of a dislocation loop definition.</p></li>
@@ -173,7 +173,7 @@
 <p><strong>Dislocation Helix</strong></p>
 <ul class="simple">
 <li><p><em>Purpose</em>: Defines dislocation helix, a type of dislocation</p></li>
-<li><p><em>Keywords</em>:</p>
+<li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nHelix</em>: Specifies the number of dislocation helix (e.g., 1).</p></li>
 <li><p><em>Helix</em>:  Labels the start of a dislocation helix definition.</p></li>
