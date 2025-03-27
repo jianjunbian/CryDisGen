@@ -110,7 +110,7 @@ Parameter tags
    -f      mesh0.dat     # mesh of helical surface
 
 
-.. important::
+.. tip::
    The lines of tags in the parameter file can be arranged in any order. To enhancethe readability, it is recommended to group **parameter tags** defining the same dislocation instance or atomic region together into a block, placing them after the corresponding **indication and counter tags**, as illustrated in the examples above.
 
    

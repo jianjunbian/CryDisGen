@@ -26,7 +26,7 @@ It is a structured ASCII text file designed to supply configuration details for 
    -lxt    1 -1  0      # local x axis on the bottom face
    -lyt   -1 -1  2      # local y axis on the bottom face
 
-   #dislcoation
+   #dislocation loop
    nLoop   1            # number of dislocation loops
    Loop                 # label of a dislocation section
    -bv     1  1  1      # orientation of Burger's vector
@@ -107,5 +107,5 @@ Key Characteristics
 
 Purpose and Usage
 -----------------
-This file serves as the parameter_file input for CryDisGen (as described in your earlier usage section), complementing the crystal_file by defining defects to insert into the crystal structure. It enables users to specify complex dislocation and tetrahedron configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.
+This file serves as the ``parameter_file`` input for CryDisGen (as described in the :doc:`Usage <Usage>` section), complementing the ``crystal_file`` by defining defects to insert into the crystal structure. It enables users to specify complex dislocation configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.
 
