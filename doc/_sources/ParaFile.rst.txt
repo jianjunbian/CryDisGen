@@ -3,7 +3,7 @@ Parameter file
 
 The paramater file is the central input of CryDisGen.
 
-It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which are either followed with vaulues or not, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
+It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by vaulues or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
 
 .. code-block:: CryDisGen
    :linenos:
@@ -68,7 +68,7 @@ Sections
 
 **Stacking Fault Tetrahedron**
 
-* *Purpose*: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.
+* *Purpose*: Configures stacking fault tetrahedrons (SFTs).
 
 * *Tags*: 
 
@@ -77,7 +77,7 @@ Sections
 
 **Dislocation Loop**
 
-* *Purpose*: Defines dislocation loops, another type of crystal defect.
+* *Purpose*: Defines dislocation loops.
 
 * *Tags*:
 
@@ -86,7 +86,7 @@ Sections
 
 **Dislocation Helix**
 
-* *Purpose*: Defines dislocation helix, a type of dislocation 
+* *Purpose*: Defines dislocation helix.  
 
 * *Tags*:
 
@@ -108,4 +108,7 @@ Key Characteristics
 Purpose and Usage
 -----------------
 This file serves as the ``parameter_file`` input for CryDisGen (as described in the :doc:`Usage <Usage>` section), complementing the ``crystal_file`` by defining defects to insert into the crystal structure. It enables users to specify complex dislocation configurations, leveraging CryDisGen’s ability to generate realistic atomic-scale models.
+
+
+
 

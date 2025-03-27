@@ -93,7 +93,7 @@
   <section id="parameter-file">
 <h1><span class="section-number">5. </span>Parameter file<a class="headerlink" href="#parameter-file" title="Link to this heading"></a></h1>
 <p>The paramater file is the central input of CryDisGen.</p>
-<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which are either followed with vaulues or not, and it includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
+<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by vaulues or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
 <div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">#those started with &#39;#&#39; are comment lines</span>
 <span class="linenos"> 2</span><span class="c">#crystal region</span>
 <span class="linenos"> 3</span><span class="k">Region</span>
@@ -152,7 +152,7 @@
 </ul>
 <p><strong>Stacking Fault Tetrahedron</strong></p>
 <ul class="simple">
-<li><p><em>Purpose</em>: Configures stacking fault tetrahedrons (SFTs), a type of defect in the crystal.</p></li>
+<li><p><em>Purpose</em>: Configures stacking fault tetrahedrons (SFTs).</p></li>
 <li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nTetrahedron</em>: Specifies the number of tetrahedrons to generate (e.g., 1).</p></li>
@@ -162,7 +162,7 @@
 </ul>
 <p><strong>Dislocation Loop</strong></p>
 <ul class="simple">
-<li><p><em>Purpose</em>: Defines dislocation loops, another type of crystal defect.</p></li>
+<li><p><em>Purpose</em>: Defines dislocation loops.</p></li>
 <li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nLoop</em>: Specifies the number of dislocation loops (e.g., 1).</p></li>
@@ -172,7 +172,7 @@
 </ul>
 <p><strong>Dislocation Helix</strong></p>
 <ul class="simple">
-<li><p><em>Purpose</em>: Defines dislocation helix, a type of dislocation</p></li>
+<li><p><em>Purpose</em>: Defines dislocation helix.</p></li>
 <li><p><em>Tags</em>:</p>
 <ul>
 <li><p><em>nHelix</em>: Specifies the number of dislocation helix (e.g., 1).</p></li>

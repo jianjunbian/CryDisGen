@@ -21,7 +21,7 @@ These are the files and subdirectories in the CryDisGen distribution:
 +---------------+--------------------------------------------------------------+
 | doc           | Documentation of CryDisGen                                   |
 +---------------+--------------------------------------------------------------+
-| examples      | Examples of dislocation structures                           |
+| examples      | Examples of dislocation structures created by CryDisGen      |
 +---------------+--------------------------------------------------------------+
 | tools         | Auxiliary tools for use with CryDisGen                       |
 +---------------+--------------------------------------------------------------+
@@ -30,7 +30,7 @@ These are the files and subdirectories in the CryDisGen distribution:
 Install
 -------
 
-After downloading the binary file and saving it as ``CryDisGen``, open a Terminal, navigate to the directory where the CryDisGen is saved, and run the following command:
+After downloading the binary file and saving it as ``CryDisGen``, open a Terminal, navigate to the directory where ``CryDisGen`` is saved, and run the following command:
 
 .. code-block:: bash
    
@@ -38,7 +38,7 @@ After downloading the binary file and saving it as ``CryDisGen``, open a Termina
    
 If it is needed, the path to ``CryDisGen`` can be added to the operating system's enviromental variable ``$PATH``. This allows ``CryDisGen`` to be executed anywhere without explicitly specifying its full path.  
 
-Assuming ``CryDisGen`` is save in a folder with the home directory, such as ``~/myfolder``, we can add its path to the enviromental varialbe ``$PATH`` by appending the following line to the ``~/.bashrc``:
+Assuming ``CryDisGen`` is saved in a folder within the home directory, such as ``~/myfolder``, we can add its path to the enviromental varialbe ``$PATH`` by appending the following line to the ``~/.bashrc``:
 
 .. code-block:: bash
 

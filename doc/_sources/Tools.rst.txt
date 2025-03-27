@@ -14,7 +14,7 @@ These are the subdirectories in ``./tools``, where several useful tools are rele
 +-----------------------------+----------------------------------------------------------------------+
 | ModelClip                   | Cut a cylinder out of a crystal block                                |
 +-----------------------------+----------------------------------------------------------------------+
-| para_file_loop_array        | Generate parameter file for dislocation loop array                   |
+| para_file_loop_array        | Generate parameter file for an array of dislocation loops            |
 +-----------------------------+----------------------------------------------------------------------+
 | para_file_nested_loop       | Generate parameter file for an array of nested dislocation loops     |
 +-----------------------------+----------------------------------------------------------------------+

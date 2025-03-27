@@ -12,7 +12,7 @@ Introduction
 |crystal_pristine|
 |crystal_disl|   
 
-The Crystal Dislocation Generator (CryDisGen) is an advanced and versatile scientific software toolkit designed to tackle a key challenge in molecular dynamics (MD) simulations: the construction of realistic initial dislocation structures in crystalline materials. Designed by researchers Jianjun Bian, Weike Yuan et. al. CryDisGen enables the creation of atomic-scale models featuring arbitrary dislocation configurations in face-centered cubic (FCC) and body-centered cubic (BCC) crystals. 
+The Crystal Dislocation Generator (CryDisGen) is an advanced and versatile scientific software toolkit designed to tackle a key challenge in molecular dynamics (MD) simulations: the construction of realistic initial dislocation structures in crystalline materials. Designed by researchers Jianjun Bian, Weike Yuan et. al., CryDisGen enables the creation of atomic-scale models featuring arbitrary dislocation configurations in face-centered cubic (FCC) and body-centered cubic (BCC) crystals. 
 
 In contrast to traditional methods, which are often limited to generating dislocations with simple geometries, CryDisGen leverages the displacement field derived from the classical Burgers model to produce complex and realistic dislocation morphologies. This capability surpasses the limitations of classical linear elasticity-based methods, which often struggle to capture intricate three-dimensional dislocation structures with atomic-level precision.
 
