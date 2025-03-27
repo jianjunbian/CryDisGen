@@ -101,11 +101,11 @@
 <p><strong>Region:</strong></p>
 <p>It indicates the following block of parameter tags defines the input atomic region. This section supplies the additional parameters for the atomic configuration. In the parameter file, only one <strong>Region</strong> tag and its associated block is required. If multiple tags and blocks are included, the last one overrides any previous ones, ensuring a single, final definition of the crystal region.</p>
 <p><strong>Loop:</strong></p>
-<p>It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In parameter file, each dislocation loop is corresponding to an independent <strong>Loop</strong> with its following block. Multiple dislocation loops can be contained in one parameter file, and there is no limitation to the number of dislocation loops.</p>
+<p>It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In the parameter file, each dislocation loop is corresponding to an independent <strong>Loop</strong> tag with its following block. Multiple dislocation loops can be included in one parameter file, and there is no limitation to the number of dislocation loops.</p>
 <p><strong>Tetrahedron:</strong></p>
-<p>Similarly, it indicates the following command block defines a stacking fault tetrahedron. In parameter file, <strong>Tetrahedron</strong> can be written as <strong>Tetra</strong> for short. Each stacking fault tetrahedron is corresponding to an independent <strong>Tetrahedron</strong> tag with a following command block. Multiple tetraherons can be included in parameter file, and there is no limitation to the number.</p>
+<p>Similarly, it indicates the following command block defines a stacking fault tetrahedron. In the parameter file, <strong>Tetrahedron</strong> can be written as <strong>Tetra</strong> for short. Each stacking fault tetrahedron is corresponding to an independent <strong>Tetrahedron</strong> tag with a following command block. Multiple stacking fault tetraherons can be included in one parameter file, and there is no limitation to the number of stacking fault tetrahedrons.</p>
 <p><strong>Helix:</strong></p>
-<p>Similar to the previous two tags, it indicats the following command block defines a dislocation helix. All other properties are the same as prevous tags. <strong>Helix</strong> and its following command block define an independent dislocation helix. Multiple helices can be included in one file, and there is no limitation to the nubmer.</p>
+<p>Similar to the previous two tags, it indicats the following block defines a dislocation helix. In the parameter file, each dislocation helix is corresponding to an indipendnet <strong>Helix</strong> tag with its following block. Multiple dislocation helices can be included in one parameter file, and there is no limitation to the nubmer of dislocation helix.</p>
 </section>
 <section id="counter-tags">
 <h2><span class="section-number">6.2. </span>Counter tags<a class="headerlink" href="#counter-tags" title="Link to this heading"></a></h2>
@@ -116,7 +116,7 @@
 <p><strong>nLoop N:</strong></p>
 <p>This counter tag <em>nLoop N</em> specifies the number of dislocation loop sections to be defined in CryDisGen’s parameter file. Here, N is a positive integer (e.g., 1, 2, etc.) indicating how many Loop sections follow in the file.</p>
 <p><strong>nTetrhedron N / nTetra N:</strong></p>
-<p>This counter <em>nTetrahedron</em> tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as <em>nTetra N</em> for short.</p>
+<p>This counter <em>nTetrahedron N</em> tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as <em>nTetra N</em> for short.</p>
 <p><strong>nHelix N:</strong></p>
 <p>The counter tag <em>nHelix N</em> specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow.</p>
 </section>

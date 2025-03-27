@@ -15,15 +15,15 @@ It indicates the following block of parameter tags defines the input atomic regi
 
 **Loop:**
 
-It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In parameter file, each dislocation loop is corresponding to an independent **Loop** with its following block. Multiple dislocation loops can be contained in one parameter file, and there is no limitation to the number of dislocation loops.    
+It has no trailig parameters, and just indicats the following block defines a dislocaiton loop. In the parameter file, each dislocation loop is corresponding to an independent **Loop** tag with its following block. Multiple dislocation loops can be included in one parameter file, and there is no limitation to the number of dislocation loops.    
 
 **Tetrahedron:**
 
-Similarly, it indicates the following command block defines a stacking fault tetrahedron. In parameter file, **Tetrahedron** can be written as **Tetra** for short. Each stacking fault tetrahedron is corresponding to an independent **Tetrahedron** tag with a following command block. Multiple tetraherons can be included in parameter file, and there is no limitation to the number. 
+Similarly, it indicates the following command block defines a stacking fault tetrahedron. In the parameter file, **Tetrahedron** can be written as **Tetra** for short. Each stacking fault tetrahedron is corresponding to an independent **Tetrahedron** tag with a following command block. Multiple stacking fault tetraherons can be included in one parameter file, and there is no limitation to the number of stacking fault tetrahedrons. 
 
 **Helix:**
 
-Similar to the previous two tags, it indicats the following command block defines a dislocation helix. All other properties are the same as prevous tags. **Helix** and its following command block define an independent dislocation helix. Multiple helices can be included in one file, and there is no limitation to the nubmer.
+Similar to the previous two tags, it indicats the following block defines a dislocation helix. In the parameter file, each dislocation helix is corresponding to an indipendnet **Helix** tag with its following block. Multiple dislocation helices can be included in one parameter file, and there is no limitation to the nubmer of dislocation helix.
 
 Counter tags
 ------------
@@ -38,7 +38,7 @@ This counter tag *nLoop N* specifies the number of dislocation loop sections to 
 
 **nTetrhedron N / nTetra N:**
 
-This counter *nTetrahedron* tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as *nTetra N* for short. 
+This counter *nTetrahedron N* tag specifies the number of stacking fault tetrahedron sections to be defined in CryDisGen’s parameter file. The value N is a positive integer (e.g., 1, 2, etc.) that indicates how many Tetrahedron sections follow. It can be written as *nTetra N* for short. 
 
 **nHelix N:**
 
