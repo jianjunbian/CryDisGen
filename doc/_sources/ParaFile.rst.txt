@@ -3,7 +3,7 @@ Parameter file
 
 The paramater file is the central input of CryDisGen.
 
-It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by vaulues or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
+It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by values or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:
 
 .. code-block:: CryDisGen
    :linenos:
@@ -29,8 +29,8 @@ It is a structured ASCII text file designed to supply configuration details for 
    #dislocation loop
    nLoop   1            # number of dislocation loops
    Loop                 # label of a dislocation section
-   -bv     1  1  1      # orientation of Burger's vector
-   -bs     1/3          # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -bv     1  1  1      # orientation of Burgers vector
+   -bs     1/3          # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
    -dnorm  1  1  1      # normal direction of plane with dislocation loop
    -dc     0. 0  0      # center of dislocation loop
    -dr     25           # radius of dislocaiton loopS
@@ -47,13 +47,13 @@ It is a structured ASCII text file designed to supply configuration details for 
 
 General Format
 --------------
-**Comments**: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).
+**Comments**: Lines beginning with # are comments, ignored by the program but used to annotate the file for user reading it (e.g., #crystal region).
 
-**Tags**: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.
+**Tags**: Each non-comment line starts with a tag (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.
 
 **Whitespace**: Tags and values are separated by spaces or tabs, with consistent spacing for readability.
 
-**Section Labels**: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.
+**Sections**: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.
 
 
 Sections 

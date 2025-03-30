@@ -93,7 +93,7 @@
   <section id="parameter-file">
 <h1><span class="section-number">5. </span>Parameter file<a class="headerlink" href="#parameter-file" title="Link to this heading"></a></h1>
 <p>The paramater file is the central input of CryDisGen.</p>
-<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by vaulues or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
+<p>It is a structured ASCII text file designed to supply configuration details for CryDisGen. It uses a line-based format with different tags which may be followed by values or stand alone, and includes comments for clarity. The file is divided into sections that describe the crystal region and the defects to be introduced. Below is an inferred breakdown of its structure and key characteristics:</p>
 <div class="highlight-CryDisGen notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">#those started with &#39;#&#39; are comment lines</span>
 <span class="linenos"> 2</span><span class="c">#crystal region</span>
 <span class="linenos"> 3</span><span class="k">Region</span>
@@ -115,8 +115,8 @@
 <span class="linenos">19</span><span class="c">#dislocation loop</span>
 <span class="linenos">20</span><span class="k">nLoop</span>   1            <span class="c"># number of dislocation loops</span>
 <span class="linenos">21</span><span class="k">Loop</span>                 <span class="c"># label of a dislocation section</span>
-<span class="linenos">22</span><span class="n">-bv</span>     1  1  1      <span class="c"># orientation of Burger&#39;s vector</span>
-<span class="linenos">23</span><span class="n">-bs</span>     1/3          <span class="c"># scalar coefficient of Burger&#39;s vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
+<span class="linenos">22</span><span class="n">-bv</span>     1  1  1      <span class="c"># orientation of Burgers vector</span>
+<span class="linenos">23</span><span class="n">-bs</span>     1/3          <span class="c"># scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2&lt;110&gt;</span>
 <span class="linenos">24</span><span class="n">-dnorm</span>  1  1  1      <span class="c"># normal direction of plane with dislocation loop</span>
 <span class="linenos">25</span><span class="n">-dc</span>     0. 0  0      <span class="c"># center of dislocation loop</span>
 <span class="linenos">26</span><span class="n">-dr</span>     25           <span class="c"># radius of dislocaiton loopS</span>
@@ -134,10 +134,10 @@
 </div>
 <section id="general-format">
 <h2><span class="section-number">5.1. </span>General Format<a class="headerlink" href="#general-format" title="Link to this heading"></a></h2>
-<p><strong>Comments</strong>: Lines beginning with # are comments, ignored by the program but used to annotate the file for human readers (e.g., #crystal region).</p>
-<p><strong>Tags</strong>: Each non-comment line starts with a keyword (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.</p>
+<p><strong>Comments</strong>: Lines beginning with # are comments, ignored by the program but used to annotate the file for user reading it (e.g., #crystal region).</p>
+<p><strong>Tags</strong>: Each non-comment line starts with a tag (e.g., Region, -x, nTetrahedron), often followed by numerical or symbolic values.</p>
 <p><strong>Whitespace</strong>: Tags and values are separated by spaces or tabs, with consistent spacing for readability.</p>
-<p><strong>Section Labels</strong>: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.</p>
+<p><strong>Sections</strong>: Some tags (e.g., Region, Tetrahedron, Loop) act as section headers or labels, grouping related parameters.</p>
 </section>
 <section id="sections">
 <h2><span class="section-number">5.2. </span>Sections<a class="headerlink" href="#sections" title="Link to this heading"></a></h2>
