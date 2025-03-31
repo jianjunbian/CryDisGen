@@ -46,5 +46,5 @@ To create a dislocation helix,
    nHelix 1
    Helix
    -bvh   1  1  1         # Burgers vecotr of helix
-   -bsh   1/2             # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -bsh   1/2             # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
    -f     mesh.dat        # mesh of helical surface

@@ -47,7 +47,7 @@ To create double dislocation helices,
    nHelix 2               # total number of helices
    Helix                  # lable of helix
    -bvh   1  1  1         # Burgers vector of helix
-   -bsh   1/2             # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -bsh   1/2             # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
    -f     mesh0.dat       # mesh of helical surface
 
    Helix

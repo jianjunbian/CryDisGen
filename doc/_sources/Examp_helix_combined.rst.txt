@@ -50,8 +50,8 @@ To create a dislocation helix combined with a loop,
    #dislcoation
    nLoop    1           # number of dislocaito loops
    Loopn                # label of a dislocation section
-   -bv     1  1  1      # orientation of Burger's vector
-   -bs    -1/2          # scalar coefficient of Burger's vector, e.g., 1/2 in: 1/2<110>
+   -bv     1  1  1      # orientation of Burgers vector
+   -bs    -1/2          # scalar coefficient of Burgers vector, e.g., 1/2 in: 1/2<110>
    -dnorm  1 -1  0      # normal direction of plane with dislocation loop
    -dc     0  25 0      # center of dislocation loop
    -dr     25           # radius of dislocaiton loop of half of the edge of square loop
