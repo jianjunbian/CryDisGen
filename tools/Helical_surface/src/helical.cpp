@@ -27,25 +27,29 @@ int main(int argc, char **argv)
 	Vect xg, yg, zg;     // global 
 	Vect xl, yl, zl;     // local 
 
-	if(argc != 28){
+	if(argc != 29){
 		printf("Usage:\n");
-		printf("     Helical_surface -xg a b c -yg a b c -zg a b c ");
+		printf("     Helical_pitch_radius -xg a b c -yg a b c -zg a b c ");
 		printf("-xl a b c -yl a b c -zl a b c ");
-		printf("r theta pitch\n");
+		printf("rtop theta pitch rbot\n");
 		printf("\n");
 		printf("Description:\n");
-		printf("     To create the mesh grid of a helical surface\n");
+		printf("     To create the mesh grid of a helical surface, with radius linearly changing from one end to the other\n");
 		printf("\n");
 		printf("Options:\n");
-		printf("     -xg: global coordination system\n");
-		printf("     -yg: \n");
-		printf("     -zg: \n");
-		printf("     -xl: local coordination system\n");
-		printf("     -xl: \n");
-		printf("     -xl: \n");
-		printf("       r: radius of helical\n");
+		printf("\n");
+		printf("     -xg: orientation of x-axis in global coordination system\n");
+		printf("     -yg: orientation of y-axis in global coordination system\n");
+		printf("     -zg: orientation of z-axis in global coordination system\n");
+		printf("\n");
+		printf("     -xl: orientation of x-axis in local coordination system\n");
+		printf("     -yl: orientation of y-axis in local coordination system\n");
+		printf("     -zl: orientation of z-axis in local coordination system\n");
+		printf("\n");
+		printf("    rtop: radius of helix at top\n");
 		printf("   theta: rotation angle (in degree)\n");
 		printf("   pitch: pitch size of the helical surface\n");
+		printf("    rbot: radius of helix at bottom\n");
 		exit(1);
 	}
   xg.x = atof(argv[2]);
@@ -72,14 +76,15 @@ int main(int argc, char **argv)
   zl.y = atof(argv[23]);
   zl.z = atof(argv[24]);
 
-	double r, theta, pitch;
-	r  = atoi(argv[25]);
+	double rtop, theta, pitch, rbot;
+	rtop  = atoi(argv[25]);
 	theta  = atof(argv[26])/180 * PI;
 	pitch  = atof(argv[27]);
+	rbot  = atoi(argv[28]);
 
 	int nr = 8;    // mesh count along radial direction
 	int nt = 40;   // mesh count along theta direction
-  double dr = r / nr;
+	double dr;
 	double dtheta = theta / nt;
 	double dz = pitch / 2. / PI;
 	double zmax = theta * dz;
@@ -118,16 +123,20 @@ int main(int argc, char **argv)
 	fprintf(fp, "%d\n", (nr+1) * (nt+1));
 	//fprintf(fp, "%d\n", natom - natom_del + ngridh[0]);
 	fprintf(fp, "ITEM: BOX BOUNDS pp pp pp\n");
-	fprintf(fp, "%f %f\n", -r, r);
-	fprintf(fp, "%f %f\n", -r, r);
+	fprintf(fp, "%f %f\n", -rtop, rtop);
+	fprintf(fp, "%f %f\n", -rtop, rtop);
 	fprintf(fp, "%f %f\n", -zmax * 0.5, zmax * 0.5);
 	fprintf(fp, "ITEM: ATOMS id type x y z\n");
 
 	for(int i = 0; i <= nr; i ++){
 		for(int j = 0; j <= nt; j ++){
+			//assume r linearly increase when z decrases from top to bottom
+			z = dz * dtheta * j;
+			double rcur = rtop + (zmax - z)/zmax * (rbot - rtop);
+			dr = rcur / nr;
 			x = dr * i * cos(dtheta * j);
 			y = dr * i * sin(dtheta * j);
-			z = dz * dtheta * j;
+			//shift along z-axis
 			z -= zmax / 2.;
 			//-------------------------------------------------------------------------
 			// coordination transform from local to global cartesian coordinate system
