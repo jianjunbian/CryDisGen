@@ -32,22 +32,22 @@ echo "total loops: $ntot"
 RANDOM=13
 for((i=-1;i<=1;i++)); do
   for((j=-1;j<=1;j++)); do
-	  for((k=-1;k<=1;k++)); do
-		  
-		  xc=`echo "$dx*$i;scale=2" | bc`
-		  yc=`echo "$dx*$j;scale=2" | bc`
-		  zc=`echo "$dx*$k;scale=2" | bc`
+    for((k=-1;k<=1;k++)); do
+      
+      xc=`echo "$dx*$i;scale=2" | bc`
+      yc=`echo "$dx*$j;scale=2" | bc`
+      zc=`echo "$dx*$k;scale=2" | bc`
       
       nid=$(($RANDOM % 8))
-			echo "Tetrahedron           "    >> para_file_array
-			echo "-tc     $xc $yc $zc   "    >> para_file_array
-			echo "-tr     20            "    >> para_file_array
-			echo "-tnorm  ${normal[$nid]} "  >> para_file_array
-			echo "-lxt    ${lxt[$nid]}     " >> para_file_array
-			echo "-lyt    ${lyt[$nid]}     " >> para_file_array
-			echo " "                         >> para_file_array
+      echo "Tetrahedron           "    >> para_file_array
+      echo "-tc     $xc $yc $zc   "    >> para_file_array
+      echo "-tr     21            "    >> para_file_array
+      echo "-tnorm  ${normal[$nid]} "  >> para_file_array
+      echo "-lxt    ${lxt[$nid]}     " >> para_file_array
+      echo "-lyt    ${lyt[$nid]}     " >> para_file_array
+      echo " "                         >> para_file_array
 
-		done
+    done
   done
 done
 
