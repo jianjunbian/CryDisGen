@@ -1,0 +1,32 @@
+#lines starting with '#' are comments
+#dislocation loop is on the local xoy coordinate plane
+#crystal region
+Region
+-x      1 -1  0      # lattice orientation along x-axis
+-y      1  1 -2      # lattice orientation along y-axis 
+-z      1  1  1      # lattice orientation along z-axis
+-lat    4.05         # lattice constant 
+-pbc    1  0  0      # boundary condition flags along x/y/z-axes: '1'for pbc, '0'for non-pbc
+
+#dislcoation
+nLoop 1
+Loop
+-bv     1 -1  0      # orientation of Burgers vector
+-bs     1/2          # scaling coefficient of Burgers vector, e.g., 1/2 in [110]/2
+-dnorm  1  1  1      # normal direction of dislocation plane
+-dc     0 -100 0.5   # center of dislocation loop
+-dr     200          # radius of dislocaiton loopS
+-lx     1 -1  0      # local x-axis on dislocation plane 
+-ly     1  1 -2      # local y-axis on dislocation plane 
+-ndisl  4  0.5       # segments/vertices in a discretized dislocation loop
+
+
+
+
+
+
+
+
+
+
+
